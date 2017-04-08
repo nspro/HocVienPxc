@@ -14,6 +14,28 @@ namespace HocVienPxc.BOL
         string _tenUngSinh;
         int _maTinhTrang;
         int _maLop;
-        
+        DateTime _ngaySinh;
+        string _noiSinh;
+        string _nguyenQuan;
+        string _hoKhau;
+        string _soCMND;
+        DateTime _ngayCapCMND;
+        string _noiCapCMND;
+        DateTime _ngayRuaToi;
+        string _giaoXuRuaToi;
+        DateTime _ngayThemSuc;
+        string _giaoXuThemSuc;
+        string _giaoXu;
+        string _giaoPhan;
+        string _dienThoaiGiaoXu;
+        string _dienThoaiCaNhan;
+        string _caTinh;
+        string _lichSuOnGoi;
+        string _yThucDoiTu;
+        string _hocTapNangKhieu;
+        string _nhungDiemCoGangThayDoi;
+        string _nhanDinhOnGoi;
+        string _sucKhoe;
+        string _nhanDinhDiem;
     }
 }
