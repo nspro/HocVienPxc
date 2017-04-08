@@ -108,37 +108,40 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Asset\Graphic\Icon\add.png" />
-    <Resource Include="Asset\Graphic\Icon\application_view_detail.png" />
-    <Resource Include="Asset\Graphic\Icon\bullet_blue.png" />
-    <Resource Include="Asset\Graphic\Icon\bullet_green.png" />
-    <Resource Include="Asset\Graphic\Icon\bullet_red.png" />
-    <Resource Include="Asset\Graphic\Icon\bullet_toggle_plus.png" />
-    <Resource Include="Asset\Graphic\Icon\bullet_yellow.png" />
-    <Resource Include="Asset\Graphic\Icon\change_password.png" />
-    <Resource Include="Asset\Graphic\Icon\chart_stock.png" />
-    <Resource Include="Asset\Graphic\Icon\cog.png" />
-    <Resource Include="Asset\Graphic\Icon\connect.png" />
-    <Resource Include="Asset\Graphic\Icon\cross.png" />
-    <Resource Include="Asset\Graphic\Icon\disk.png" />
-    <Resource Include="Asset\Graphic\Icon\door_out.png" />
-    <Resource Include="Asset\Graphic\Icon\error.png" />
-    <Resource Include="Asset\Graphic\Icon\export_excel.png" />
-    <Resource Include="Asset\Graphic\Icon\file_extension_pdf.png" />
-    <Resource Include="Asset\Graphic\Icon\folder.png" />
-    <Resource Include="Asset\Graphic\Icon\group.png" />
-    <Resource Include="Asset\Graphic\Icon\help.png" />
-    <Resource Include="Asset\Graphic\Icon\key.png" />
-    <Resource Include="Asset\Graphic\Icon\page_white_edit.png" />
-    <Resource Include="Asset\Graphic\Icon\printer.png" />
-    <Resource Include="Asset\Graphic\Icon\report_user.png" />
-    <Resource Include="Asset\Graphic\Icon\resultset_first.png" />
-    <Resource Include="Asset\Graphic\Icon\resultset_last.png" />
-    <Resource Include="Asset\Graphic\Icon\resultset_next.png" />
-    <Resource Include="Asset\Graphic\Icon\student.png" />
-    <Resource Include="Asset\Graphic\Icon\table_excel.png" />
-    <Resource Include="Asset\Graphic\Icon\tick.png" />
-    <Resource Include="Asset\Graphic\Icon\update.png" />
+    <Resource Include="Asset\Graphic\Sample image\img_avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\Icon\img_icon_add.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_blue.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_green.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_red.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_toggle_plus.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_yellow.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_change_password.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_chart_stock.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_config.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_connect.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_cross.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_disk.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_door_out.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_edit.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_error.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_export_excel.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_file_extension_pdf.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_folder.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_group.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_help.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_key.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_printer.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_report_user.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_resultset_first.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_resultset_last.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_resultset_next.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_student.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_table_excel.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_tick.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_update.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon__view_detail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

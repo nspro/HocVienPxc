@@ -4,8 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HocVienPxc.Form"
-        mc:Ignorable="d" Height="498" Width="700" Icon="client_account_template.png" ResizeMode="NoResize" Title="Thông tin ứng sinh">
+        mc:Ignorable="d" Height="500" Width="700" Icon="/HocVienPxc;component/Asset/Graphic/Icon/student.png" ResizeMode="NoResize" Title="Thông tin ứng sinh">
+    <Window.Resources>
+        <SolidColorBrush x:Key="color_Personal_Backgroud" Color="Gainsboro"/>
+    </Window.Resources>
     <Grid>
+        <StackPanel HorizontalAlignment="Left" Width="200" Margin="0" Height="400" VerticalAlignment="Top" Background="{DynamicResource color_Personal_Backgroud}">
+            <Image x:Name="image" Height="120" Margin="55,20,55,0" VerticalAlignment="Top"/>
+        </StackPanel>
+        <TabPanel x:Name="tabPanel" Margin="205,0,0,71"/>
 
     </Grid>
 </Window>
