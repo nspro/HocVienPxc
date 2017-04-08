@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Form\frmUngSinh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +71,9 @@
     <Compile Include="DAL\BaseDAL.cs" />
     <Compile Include="DAL\UngSinhDAL.cs" />
     <Compile Include="Form\Class1.cs" />
+    <Compile Include="Form\frmUngSinh.xaml.cs">
+      <DependentUpon>frmUngSinh.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -100,6 +107,42 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\Sample image\img_avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\Icon\img_icon_add.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_blue.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_green.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_red.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_toggle_plus.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_bullet_yellow.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_change_password.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_chart_stock.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_config.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_connect.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_cross.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_disk.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_door_out.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_edit.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_error.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_export_excel.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_file_extension_pdf.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_folder.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_group.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_help.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_key.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_printer.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_report_user.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_resultset_first.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_resultset_last.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_resultset_next.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_student.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_table_excel.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_tick.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_update.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon__view_detail.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
