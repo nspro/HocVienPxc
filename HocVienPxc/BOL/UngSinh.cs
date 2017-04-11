@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using HocVienPxc.DAL;
 
 namespace HocVienPxc.BOL
 {
@@ -37,7 +39,7 @@ namespace HocVienPxc.BOL
         string _nhanDinhOnGoi;
         string _sucKhoe;
         string _nhanDinhDiem;
-        public int MaUngSing
+        public int MaUngSinh
         {
             get { return _maUngSinh; }
             set { _maUngSinh = value; }
@@ -181,6 +183,31 @@ namespace HocVienPxc.BOL
         {
             get { return _nhanDinhDiem; }
             set { _nhanDinhDiem = value; }
+        }
+        public static ObservableCollection<UngSinh> HienThiTatCa()
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.HienThiTatCa();
+        }
+        public static ObservableCollection<UngSinh> ThongTinUngSinh(int MaUngSinh)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.ThongTinUngSinh(MaUngSinh);
+        }
+        public int ThemTaiKhoan(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.ThemTaiKhoan(obj);
+        }
+        public int SuaUngSinh(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.SuaUngSinh(obj);
+        }
+        public int XoaUngSinh(int MaUngSinh)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.XoaUngSinh(MaUngSinh);
         }
     }
     

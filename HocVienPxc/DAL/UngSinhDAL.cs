@@ -15,7 +15,7 @@ namespace HocVienPxc.DAL
         public UngSinh UngSinhIDataReader(IDataReader Reader)
         {
             UngSinh obj = new UngSinh();
-            obj.MaUngSing = (Reader["MaUngSinh"] is DBNull) ? int.MinValue : (int)Reader["MaUngSinh"];
+            obj.MaUngSinh = (Reader["MaUngSinh"] is DBNull) ? int.MinValue : (int)Reader["MaUngSinh"];
             obj.TenThanh = (Reader["TenThanh"] is DBNull) ? string.Empty : (string)Reader["TenThanh"];
             obj.HoVaTenLot = (Reader["HoVaTenLot"] is DBNull) ? string.Empty : (string)Reader["HoVaTenLot"];
             obj.TenUngSing = (Reader["TenUngSinh"] is DBNull) ? string.Empty : (string)Reader["TenUngSinh"];
@@ -67,6 +67,48 @@ namespace HocVienPxc.DAL
                 return 0;
             }
         }
+        public int SuaUngSinh(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set TenThanh = N'" + obj.TenThanh + "', HoVaTenLot = N'" + obj.HoVaTenLot + "',TenUngSing = N'" + obj.TenUngSing + "',MaTinhTrang =N'" + obj.MaTinhTrang + "',MaLop = N'" + obj.MaLop + "',NgaySinh=N'" + obj.NgaySinh + "',NoiSinh=N'" + obj.NoiSinh + "',NguyenQuan=N'" + obj.NguyenQuan + "',HoKhauThuongTru=N'" + obj.HoKhauThuongTru + "',SoCMND=N'" + obj.SoCMND + "',NgayCapCMND=N'" + obj.NgayCapCMND + "',NoiCapCMND=N'" + obj.NoiCapCMND + "',NgayRuaToi=N'" + obj.NgayRuaToi + "',GiaoXuRuaToi=N'" + obj.GiaoXuRuaToi + "',NgayThemSuc=N'" + obj.NgayThemSuc + "',GiaoXuThemSuc=N'" + obj.GiaoXuThemSuc + "',GiaoXu=N'" + obj.GiaoXu + "',GiaoPhan=N'" + obj.GiaoPhan + "',DienThoaiGiaoXu=N'" + obj.DienThoaiGiaoXu + "',DienThoaiCaNhan=N'" + obj.DienThoaiCaNhan + "',CaTinh=N'" + obj.CaTinh + "',LichSuOnGoi=N'" + obj.LichSuOnGoi + "',YThucDoiTu=N'" + obj.YThucDoiTu + "',HocTapNangKhieu=N'" + obj.HocTapNangKhieu + "',NhungDiemCoGangThayDoi=N'" + obj.NhungDiemCoGangThayDoi + "',NhanDinhOnGoi=N'" + obj.NhanDinhOnGoi + "',SucKhoe=N'" + obj.SucKhoe + "',NhanDinhDiem=N'" + obj.NhanDinhDiem + "' where MaUngSinh = '"+obj.MaUngSinh+"' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int XoaUngSinh(int MaUngSinh)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Delete * from UngSinh where MaUngSinh = '"+MaUngSinh+"' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
         public ObservableCollection<UngSinh> HienThiTatCa()
         {
             using (SqlConnection conn = getConnect())
@@ -74,7 +116,37 @@ namespace HocVienPxc.DAL
                 conn.Open();
                 SqlCommand myCommand = new SqlCommand("Select * from UngSinh",conn);
                 myCommand.CommandType = CommandType.Text;
-                //ObservableCollection
+                ObservableCollection<UngSinh> lst = new ObservableCollection<UngSinh>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if(Reader.HasRows)
+                {
+                    while(Reader.Read())
+                    {
+                        lst.Add(UngSinhIDataReader(Reader));
+                    }Reader.Close();
+                }conn.Close();
+                return lst;
+            }
+        }
+        public ObservableCollection<UngSinh> ThongTinUngSinh(int MaUngSinh)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("Select * from UngSinh where MaUngSinh = '" + MaUngSinh + "' ",conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<UngSinh> lst = new ObservableCollection<BOL.UngSinh>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        lst.Add(UngSinhIDataReader(Reader));
+                    }
+                    Reader.Close();
+                }
+                conn.Close();
+                return lst;
             }
         }
     }
