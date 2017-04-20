@@ -35,5 +35,25 @@ namespace HocVienPxc.BOL
             get { return _giaTriTrongSo; }
             set { _giaTriTrongSo = value; }
         }
+        public static int ThemTrongSo(TrongSo obj)
+        {
+            TrongSoDAL db = new TrongSoDAL();
+            return db.ThemTrongSo(obj);
+        }
+        public static int SuaTrongSo(TrongSo obj)
+        {
+            TrongSoDAL db = new TrongSoDAL();
+            return db.SuaTrongSo(obj);
+        }
+        public static int XoaTrongSo(TrongSo obj)
+        {
+            TrongSoDAL db = new TrongSoDAL();
+            return db.XoaTrongSo(obj);
+        }
+        public static ObservableCollection<TrongSo> HienThiTatCa()
+        {
+            TrongSoDAL db = new TrongSoDAL();
+            return db.HienThiTatCa();
+        }
     }
 }

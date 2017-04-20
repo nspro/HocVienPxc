@@ -45,13 +45,51 @@ namespace HocVienPxc.DAL
             {
                 try {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Update TrongSo set TenDauDiem = '" + obj.TenDauDiem + "', TrongSo = '" + obj.GiaTriTrongSo + "' where MaMonHoc = '" + obj.MaMonHoc + "' and MaDauDiem = '" + obj.MaDauDiem + "' ");
+                    SqlCommand myCommand = new SqlCommand("Update TrongSo set TenDauDiem = '" + obj.TenDauDiem + "', TrongSo = '" + obj.GiaTriTrongSo + "' where MaMonHoc = '" + obj.MaMonHoc + "' and MaDauDiem = '" + obj.MaDauDiem + "' ",conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
                     return 1;
                 }
                 catch { return 0; }
+            }
+        }
+        public int XoaTrongSo(TrongSo obj)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand myCommand = new SqlCommand("Delete * from TrongSo where MaMonHoc = '" + obj.MaMonHoc + "' and MaDauDiem = '" + obj.MaDauDiem + "' ", conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                    return 1;
+                }
+                catch
+                {
+                    return 0;
+                }
+            }
+        }
+        public ObservableCollection<TrongSo> HienThiTatCa()
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("Select * from TrongSo", conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<TrongSo> lst = new ObservableCollection<TrongSo>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if(Reader.HasRows)
+                {
+                    while(Reader.Read())
+                    {
+                        lst.Add(TrongSoIDataReader(Reader));
+                    }Reader.Close();
+                }conn.Close();
+                return lst;
             }
         }
     }
