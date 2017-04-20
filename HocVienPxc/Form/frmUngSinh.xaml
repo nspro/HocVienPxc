@@ -4,15 +4,50 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HocVienPxc.Form"
-        mc:Ignorable="d" Height="500" Width="700" Icon="/HocVienPxc;component/Asset/Graphic/Icon/student.png" ResizeMode="NoResize" Title="Thông tin ứng sinh">
+        mc:Ignorable="d" Height="500" Width="700" Icon="/HocVienPxc;component/Asset/Graphic/Icon/img_icon_student.png" ResizeMode="NoResize" Title="Thông tin ứng sinh">
     <Window.Resources>
         <SolidColorBrush x:Key="color_Personal_Backgroud" Color="Gainsboro"/>
+        <DropShadowBitmapEffect x:Key="Style_Object_Drop_Shadow1" Color="Black" Direction="300" ShadowDepth="2" Softness="0.15" Opacity="0.3"/>
+        <DropShadowBitmapEffect x:Key="Style_Object_Drop_Shadow2" Color="Black" Direction="250" Softness="0.3" Opacity="0.3" ShadowDepth="1"/>
     </Window.Resources>
-    <Grid>
-        <StackPanel HorizontalAlignment="Left" Width="200" Margin="0" Height="400" VerticalAlignment="Top" Background="{DynamicResource color_Personal_Backgroud}">
-            <Image x:Name="image" Height="120" Margin="55,20,55,0" VerticalAlignment="Top"/>
+    <Grid Background="#F9F9F9F9">
+        <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,5,0,0" Height="400" VerticalAlignment="Top" Background="#F9F9F9F9" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
+            <Image x:Name="imgAvatar" Height="120" Margin="55,20,55,0" VerticalAlignment="Top" Source="/HocVienPxc;component/Asset/Graphic/Sample image/img_avatar.png" Cursor="" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow1}"/>
+            <TextBox x:Name="txtHoTen" Height="23" TextWrapping="Wrap" Text="Phanxico Assisi" Width="150" Margin="25,5" TextAlignment="Center" FontSize="14" FontFamily="Helvetica Neue" Padding="0,1,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF191919" Template="{DynamicResource Template_PersonInformation_textbox}" FontWeight="Bold"/>
+          
+            <Border BorderThickness="0,1,0,1" BorderBrush="#FFE0E0E0">
+                <StackPanel Background="#FFF3F4F5" Orientation="Horizontal">
+                    <Label x:Name="label1" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                    <TextBox x:Name="textBox1" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <StackPanel Background="#F9F9F9F9" Orientation="Horizontal">
+                <Label x:Name="label2" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                <TextBox x:Name="textBox2" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+            </StackPanel>
+
+            <Border BorderThickness="0,1,0,1" BorderBrush="#FFE0E0E0">
+                <StackPanel Background="#FFF3F4F5" Orientation="Horizontal">
+                    <Label x:Name="label3" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                    <TextBox x:Name="textBox3" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Background="#F9F9F9F9" Orientation="Horizontal">
+                <Label x:Name="label4" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                <TextBox x:Name="textBox4" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+            </StackPanel>
+
+            <Border BorderThickness="0,1,0,1" BorderBrush="#FFE0E0E0">
+                <StackPanel Background="#FFF3F4F5" Orientation="Horizontal">
+                    <Label x:Name="label5" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                    <TextBox x:Name="textBox5" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
         </StackPanel>
-        <TabPanel x:Name="tabPanel" Margin="205,0,0,71"/>
+        <TabPanel x:Name="tabPanel" Margin="215,5,0,66"/>
 
     </Grid>
 </Window>
