@@ -21,6 +21,11 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        <SolidColorBrush x:Key="Color_Form_BackgroundF9F9F9F" Color="#F9F9F9F9"/>
+        <SolidColorBrush x:Key="Color_Label_ColorE0E0E0E0" Color="#FFE0E0E0"/>
+        <SolidColorBrush x:Key="Color_Label_Background_#FFF3F4F5" Color="#FFF3F4F5"/>
+        <SolidColorBrush x:Key="Color_control_border_ACACAC" Color="#FFACACAC"/>
+        <Color x:Key="Color_Text_Status_Online">#FF178000</Color>
 
     </Application.Resources>
 </Application>
