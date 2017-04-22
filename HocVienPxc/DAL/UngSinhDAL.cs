@@ -12,7 +12,7 @@ namespace HocVienPxc.DAL
 {
     public class UngSinhDAL:BaseDAL
     {
-        public UngSinh UngSinhIDataReader(IDataReader Reader)
+        private UngSinh UngSinhIDataReader(IDataReader Reader)
         {
             UngSinh obj = new UngSinh();
             obj.MaUngSinh = (Reader["MaUngSinh"] is DBNull) ? int.MinValue : (int)Reader["MaUngSinh"];
@@ -128,7 +128,7 @@ namespace HocVienPxc.DAL
                 return lst;
             }
         }
-        public ObservableCollection<UngSinh> ThongTinUngSinh(int MaUngSinh)
+        public ObservableCollection<UngSinh> HienThiUngSinh(int MaUngSinh)
         {
             using (SqlConnection conn = getConnect())
             {

@@ -68,13 +68,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BOL\GiaiDoan.cs" />
+    <Compile Include="BOL\HocKy.cs" />
+    <Compile Include="BOL\Lop.cs" />
+    <Compile Include="BOL\MonHoc.cs" />
     <Compile Include="BOL\TrongSo.cs" />
     <Compile Include="BOL\UngSinh.cs" />
     <Compile Include="DAL\BaseDAL.cs" />
     <Compile Include="DAL\GiaiDoanDAL.cs" />
+    <Compile Include="DAL\HocKyDAL.cs" />
+    <Compile Include="DAL\LopDAL.cs" />
+    <Compile Include="DAL\MonHocDAL.cs" />
     <Compile Include="DAL\TrongSoDAL.cs" />
     <Compile Include="DAL\UngSinhDAL.cs" />
-    <Compile Include="Form\Class1.cs" />
     <Compile Include="Form\frmUngSinh.xaml.cs">
       <DependentUpon>frmUngSinh.xaml</DependentUpon>
     </Compile>

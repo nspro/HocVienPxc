@@ -12,7 +12,7 @@ namespace HocVienPxc.DAL
 {
     public class TrongSoDAL:BaseDAL
     {
-        public TrongSo TrongSoIDataReader(IDataReader Reader)
+        private TrongSo TrongSoIDataReader(IDataReader Reader)
         {
             TrongSo obj = new TrongSo();
             obj.MaDauDiem = (Reader["MaDauDiem"] is DBNull) ? int.MinValue : (int)Reader["MaDauDiem"];
@@ -54,14 +54,14 @@ namespace HocVienPxc.DAL
                 catch { return 0; }
             }
         }
-        public int XoaTrongSo(TrongSo obj)
+        public int XoaTrongSo(int MaMonHoc, int MaDauDiem)
         {
             using (SqlConnection conn = getConnect())
             {
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Delete * from TrongSo where MaMonHoc = '" + obj.MaMonHoc + "' and MaDauDiem = '" + obj.MaDauDiem + "' ", conn);
+                    SqlCommand myCommand = new SqlCommand("Delete * from TrongSo where MaMonHoc = '" + MaMonHoc + "' and MaDauDiem = '" + MaDauDiem + "' ", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
@@ -89,6 +89,27 @@ namespace HocVienPxc.DAL
                         lst.Add(TrongSoIDataReader(Reader));
                     }Reader.Close();
                 }conn.Close();
+                return lst;
+            }
+        }
+        public ObservableCollection<TrongSo> HienThiTrongSo(int MaMonHoc, int MaDauDiem)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("Select * from TrongSo where MaMonHoc= '"+MaMonHoc+"', MaDauDiem = '"+MaDauDiem+"' ", conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<TrongSo> lst = new ObservableCollection<TrongSo>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        lst.Add(TrongSoIDataReader(Reader));
+                    }
+                    Reader.Close();
+                }
+                conn.Close();
                 return lst;
             }
         }

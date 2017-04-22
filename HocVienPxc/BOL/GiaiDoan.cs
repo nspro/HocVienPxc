@@ -28,6 +28,30 @@ namespace HocVienPxc.BOL
             get { return _soHocKy; }
             set { _soHocKy = value; }
         }
-        
+        public int ThemGiaiDoan(GiaiDoan obj)
+        {
+            GiaiDoanDAL db = new GiaiDoanDAL();
+            return db.ThemGiaiDoan(obj);
+        }
+        public int SuaGiaiDoan(GiaiDoan obj)
+        {
+            GiaiDoanDAL db = new GiaiDoanDAL();
+            return db.SuaGiaiDoan(obj);
+        }
+        public int XoaGiaiDoan(int MaGiaiDoan)
+        {
+            GiaiDoanDAL db = new GiaiDoanDAL();
+            return db.XoaGiaiDoan(MaGiaiDoan);
+        }
+        public static ObservableCollection<GiaiDoan> HienThiTatCa()
+        {
+            GiaiDoanDAL db = new GiaiDoanDAL();
+            return db.HienThiTatCa();
+        }
+        public static ObservableCollection<GiaiDoan> HienThiGiaiDoan(int MaGiaiDoan)
+        {
+            GiaiDoanDAL db = new GiaiDoanDAL();
+            return db.HienThiGiaiDoan(MaGiaiDoan);
+        }
     }
 }

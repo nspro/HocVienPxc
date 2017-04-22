@@ -10,62 +10,26 @@ using HocVienPxc.BOL;
 
 namespace HocVienPxc.DAL
 {
-    public class GiaiDoanDAL:BaseDAL
+    public class LopDAL : BaseDAL
     {
-        private GiaiDoan GiaiDoanIDataReader(IDataReader Reader)
+        private Lop LopIDataReader(IDataReader Reader)
         {
-            GiaiDoan obj = new GiaiDoan();
+            Lop obj = new Lop();
+            obj.MaLop = (Reader["MaLop"] is DBNull) ? int.MinValue : (int)Reader["MaLop"];
+            obj.TenLop = (Reader["TenLop"] is DBNull) ? string.Empty : (string)Reader["TenLop"];
+            obj.NamBatDau = (Reader["NamBatDau"] is DBNull) ? string.Empty : (string)Reader["NamBatDau"];
             obj.MaGiaiDoan = (Reader["MaGiaiDoan"] is DBNull) ? int.MinValue : (int)Reader["MaGiaiDoan"];
-            obj.TenGiaiDoan = (Reader["TenGiaiDoan"] is DBNull) ? string.Empty : (string)Reader["TenGiaiDoan"];
-            obj.SoHocKy = (Reader["SoHocKy"] is DBNull) ? int.MinValue : (int)Reader["SoHocKy"];
+            obj.MaHocKy = (Reader["MaHocKy"] is DBNull) ? int.MinValue : (int)Reader["MaHocKy"];
             return obj;
         }
-        public int ThemGiaiDoan(GiaiDoan obj)
+        public int ThemLop(Lop obj)
         {
             using (SqlConnection conn = getConnect())
             {
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into GiaiDoan values('" + obj.MaGiaiDoan + "',N'" + obj.TenGiaiDoan + "','" + obj.SoHocKy + "')", conn);
-                    myCommand.CommandType = CommandType.Text;
-                    myCommand.ExecuteReader();
-                    conn.Close();
-                    return 1;
-                }
-                catch
-                {
-                    return 0;
-                }
-            }
-        }
-        public int SuaGiaiDoan(GiaiDoan obj)
-        {
-            using (SqlConnection conn = getConnect())
-            {
-                try
-                {
-                    conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Update GiaiDoan set TenGiaiDoan = '" + obj.TenGiaiDoan + "', SoHocKy = '" + obj.SoHocKy + "' where MaGiaiDoan = '" + obj.MaGiaiDoan + "' ", conn);
-                    myCommand.CommandType = CommandType.Text;
-                    myCommand.ExecuteNonQuery();
-                    conn.Close();
-                    return 1;
-                }
-                catch
-                {
-                    return 0;
-                }         
-            }
-        }
-        public int XoaGiaiDoan(int MaGiaiDoan)
-        {
-            using (SqlConnection conn = getConnect())
-            {
-                try
-                {
-                    conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Delete * from GiaiDoan where MaGiaiDoan = '" + MaGiaiDoan + "' ", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into Lop value('" + obj.MaLop + "','" + obj.TenLop + "','" + obj.NamBatDau + "','" + obj.MaGiaiDoan + "','" + obj.MaHocKy + "')", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
@@ -77,20 +41,58 @@ namespace HocVienPxc.DAL
                 }
             }
         }
-        public ObservableCollection<GiaiDoan> HienThiTatCa()
+        public int SuaLop(Lop obj)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand myCommand = new SqlCommand("Update Lop set TenLop = '" + obj.TenLop + "', NamBatDau = '" + obj.NamBatDau + "', MaGiaiDoan = '" + obj.MaGiaiDoan + "', MaHocKy = '" + obj.MaHocKy + "' where MaLop='" + obj.MaLop + "' ", conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                    return 1;
+                }
+                catch
+                {
+                    return 0;
+                }
+            }
+        }
+        public int XoaLop(int MaLop)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand myCommand = new SqlCommand("Delete * from MaLop = '"+MaLop+"' ", conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                    return 1;
+                }
+                catch
+                {
+                    return 0;
+                }
+            }
+        }
+        public ObservableCollection<Lop> HienThiTatCa()
         {
             using (SqlConnection conn = getConnect())
             {
                 conn.Open();
-                SqlCommand myCommand = new SqlCommand("Select * from GiaiDoan", conn);
+                SqlCommand myCommand = new SqlCommand("Select * from Lop", conn);
                 myCommand.CommandType = CommandType.Text;
-                ObservableCollection<GiaiDoan> lst = new ObservableCollection<GiaiDoan>();
+                ObservableCollection<Lop> lst = new ObservableCollection<Lop>();
                 SqlDataReader Reader = myCommand.ExecuteReader();
                 if (Reader.HasRows)
                 {
                     while (Reader.Read())
                     {
-                        lst.Add(GiaiDoanIDataReader(Reader));
+                        lst.Add(LopIDataReader(Reader));
                     }
                     Reader.Close();
                 }
@@ -98,20 +100,20 @@ namespace HocVienPxc.DAL
                 return lst;
             }
         }
-        public ObservableCollection<GiaiDoan> HienThiGiaiDoan(int MaGiaiDoan)
+        public ObservableCollection<Lop> HienThiLop(int MaLop)
         {
             using (SqlConnection conn = getConnect())
             {
                 conn.Open();
-                SqlCommand myCommand = new SqlCommand("Select * from GiaiDoan where MaGiaiDoan = '"+MaGiaiDoan+"' ", conn);
+                SqlCommand myCommand = new SqlCommand("Select * from Lop where MaLop = '"+MaLop+"' ", conn);
                 myCommand.CommandType = CommandType.Text;
-                ObservableCollection<GiaiDoan> lst = new ObservableCollection<GiaiDoan>();
+                ObservableCollection<Lop> lst = new ObservableCollection<Lop>();
                 SqlDataReader Reader = myCommand.ExecuteReader();
                 if (Reader.HasRows)
                 {
                     while (Reader.Read())
                     {
-                        lst.Add(GiaiDoanIDataReader(Reader));
+                        lst.Add(LopIDataReader(Reader));
                     }
                     Reader.Close();
                 }

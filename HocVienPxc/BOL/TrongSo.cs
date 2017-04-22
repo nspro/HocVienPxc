@@ -45,15 +45,20 @@ namespace HocVienPxc.BOL
             TrongSoDAL db = new TrongSoDAL();
             return db.SuaTrongSo(obj);
         }
-        public static int XoaTrongSo(TrongSo obj)
+        public static int XoaTrongSo(int MaMonHoc, int MaDauDiem)
         {
             TrongSoDAL db = new TrongSoDAL();
-            return db.XoaTrongSo(obj);
+            return db.XoaTrongSo(MaMonHoc,MaDauDiem);
         }
         public static ObservableCollection<TrongSo> HienThiTatCa()
         {
             TrongSoDAL db = new TrongSoDAL();
             return db.HienThiTatCa();
+        }
+        public static ObservableCollection<TrongSo> HienThiTrongSo(int MaMonHoc, int MaDauDiem)
+        {
+            TrongSoDAL db = new TrongSoDAL();
+            return db.HienThiTrongSo(MaMonHoc,MaDauDiem);
         }
     }
 }

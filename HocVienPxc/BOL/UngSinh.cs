@@ -189,10 +189,10 @@ namespace HocVienPxc.BOL
             UngSinhDAL db = new UngSinhDAL();
             return db.HienThiTatCa();
         }
-        public static ObservableCollection<UngSinh> ThongTinUngSinh(int MaUngSinh)
+        public static ObservableCollection<UngSinh> HienThiUngSinh(int MaUngSinh)
         {
             UngSinhDAL db = new UngSinhDAL();
-            return db.ThongTinUngSinh(MaUngSinh);
+            return db.HienThiUngSinh(MaUngSinh);
         }
         public int ThemTaiKhoan(UngSinh obj)
         {
