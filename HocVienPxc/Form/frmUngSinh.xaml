@@ -1,53 +1,244 @@
-﻿<Window x:Class="HocVienPxc.Form.frmUngSinh"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HocVienPxc.Form"
-        mc:Ignorable="d" Height="500" Width="700" Icon="/HocVienPxc;component/Asset/Graphic/Icon/img_icon_student.png" ResizeMode="NoResize" Title="Thông tin ứng sinh">
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="HocVienPxc.Form.frmUngSinh"
+        mc:Ignorable="d" Height="600" Width="1024" Icon="/HocVienPxc;component/Asset/Graphic/Icon/img_icon_student.png" ResizeMode="NoResize" Title="Thông tin ứng sinh">
     <Window.Resources>
         <SolidColorBrush x:Key="color_Personal_Backgroud" Color="Gainsboro"/>
         <DropShadowBitmapEffect x:Key="Style_Object_Drop_Shadow1" Color="Black" Direction="300" ShadowDepth="2" Softness="0.15" Opacity="0.3"/>
         <DropShadowBitmapEffect x:Key="Style_Object_Drop_Shadow2" Color="Black" Direction="250" Softness="0.3" Opacity="0.3" ShadowDepth="1"/>
     </Window.Resources>
     <Grid Background="#F9F9F9F9">
-        <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,5,0,0" Height="400" VerticalAlignment="Top" Background="#F9F9F9F9" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
+        <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,5,0,50" Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
             <Image x:Name="imgAvatar" Height="120" Margin="55,20,55,0" VerticalAlignment="Top" Source="/HocVienPxc;component/Asset/Graphic/Sample image/img_avatar.png" Cursor="" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow1}"/>
             <TextBox x:Name="txtHoTen" Height="23" TextWrapping="Wrap" Text="Phanxico Assisi" Width="150" Margin="25,5" TextAlignment="Center" FontSize="14" FontFamily="Helvetica Neue" Padding="0,1,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF191919" Template="{DynamicResource Template_PersonInformation_textbox}" FontWeight="Bold"/>
-          
-            <Border BorderThickness="0,1,0,1" BorderBrush="#FFE0E0E0">
-                <StackPanel Background="#FFF3F4F5" Orientation="Horizontal">
-                    <Label x:Name="label1" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                    <TextBox x:Name="textBox1" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
-                </StackPanel>
-            </Border>
-            
-            <StackPanel Background="#F9F9F9F9" Orientation="Horizontal">
-                <Label x:Name="label2" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                <TextBox x:Name="textBox2" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
-            </StackPanel>
 
-            <Border BorderThickness="0,1,0,1" BorderBrush="#FFE0E0E0">
+            <Border BorderThickness="0,1,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}">
                 <StackPanel Background="#FFF3F4F5" Orientation="Horizontal">
-                    <Label x:Name="label3" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                    <TextBox x:Name="textBox3" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+                    <Label x:Name="lb_Stick_NgaySinh" Content="Ngày sinh" Height="35" Width="85" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                    <TextBox x:Name="txt_Stick_NgaySinh" Height="35" TextWrapping="Wrap" Text="13-11-1992" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
                 </StackPanel>
             </Border>
 
             <StackPanel Background="#F9F9F9F9" Orientation="Horizontal">
-                <Label x:Name="label4" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                <TextBox x:Name="textBox4" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+                <Label x:Name="lb_Stick_GiaoXu" Content="Giáo xứ" Height="35" Width="85" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                <TextBox x:Name="txt_Stick_GiaoXu" Height="35" TextWrapping="Wrap" Text="Thạch Lâm" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+            </StackPanel>
+
+            <Border BorderThickness="0,1,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}">
+                <StackPanel Background="#FFF3F4F5" Orientation="Horizontal">
+                    <Label x:Name="lb_Stick_GiaoPhan" Content="Giáo phận" Height="35" Width="85" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                    <TextBox x:Name="txt_Stick_GiaoPhan" Height="35" TextWrapping="Wrap" Text="Xuân Lộc" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Background="#F9F9F9F9" Orientation="Horizontal">
+                <Label x:Name="lb_Stick_GiaiDoan" Content="Giai đoạn" Height="35" Width="85" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                <TextBox x:Name="txt_Stick_GiaiDoan" Height="35" TextWrapping="Wrap" Text="Tìm hiểu" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
             </StackPanel>
 
             <Border BorderThickness="0,1,0,1" BorderBrush="#FFE0E0E0">
                 <StackPanel Background="#FFF3F4F5" Orientation="Horizontal">
-                    <Label x:Name="label5" Content="Label" Height="35" Width="80" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                    <TextBox x:Name="textBox5" Height="35" TextWrapping="Wrap" Text="TextBox" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+                    <Label x:Name="lb_Stick_Lop" Content="Lớp" Height="35" Width="85" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                    <TextBox x:Name="textBox3" Height="35" TextWrapping="Wrap" Text="An-tôn (2016)" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Background="#F9F9F9F9" Orientation="Horizontal">
+                <Label x:Name="lb_Stick_HocKy" Content="Học kỳ" Height="35" Width="85" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                <TextBox x:Name="txt_Stick_HocKy" Height="35" TextWrapping="Wrap" Text="2" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0"/>
+            </StackPanel>
+
+            <Border BorderThickness="0,1,0,1" BorderBrush="#FFE0E0E0">
+                <StackPanel Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" Orientation="Horizontal">
+                    <Label x:Name="lb_Stick_TinhTrang" Content="Tình trạng" Height="35" Width="85" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                    <TextBox x:Name="txt_Stick_TinhTrang" Height="35" TextWrapping="Wrap" Text="Đang học" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" FontWeight="Bold">
+                        <TextBox.Foreground>
+                            <SolidColorBrush Color="{DynamicResource Color_Text_Status_Online}"/>
+                        </TextBox.Foreground>
+                    </TextBox>
                 </StackPanel>
             </Border>
 
         </StackPanel>
-        <TabPanel x:Name="tabPanel" Margin="215,5,0,66"/>
+        <TabControl x:Name="tabControl" Margin="210,5,5,50" BorderBrush="{DynamicResource Color_control_border_ACACAC}">
+            <TabItem Header="Thông tin chi tiết">
+                <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
+                    <Canvas Margin="10,10,395,10">
+                        <Rectangle Fill="{DynamicResource Color_Label_Background_#FFF3F4F5}" Height="468.04" Width="150" HorizontalAlignment="Left"/>
+                        <StackPanel Height="468.04" Width="392">
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label6" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox6" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label7" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox7" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label8" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox8" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label9" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox9" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label10" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox10" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label11" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox11" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label12" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox12" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label13" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox13" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label14" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox14" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label15" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox15" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label16" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox16" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label17" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox17" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label18" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox18" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Canvas>
+                    <Canvas Margin="410,10,395,10" d:LayoutOverrides="Width">
+                        <Rectangle Fill="{DynamicResource Color_Label_Background_#FFF3F4F5}" Height="468.04" Width="150" HorizontalAlignment="Left"/>
+                        <StackPanel Height="468.04" Width="392">
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label19" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox19" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label20" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox20" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label21" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox21" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label22" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox22" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label25" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox25" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label23" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox23" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label24" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox24" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label27" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox27" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label26" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox26" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label33" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox33" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label28" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox28" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label29" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox29" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label x:Name="label30" Content="Label" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
+                                    <TextBox x:Name="textBox30" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}"/>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
