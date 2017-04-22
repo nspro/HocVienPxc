@@ -43,7 +43,38 @@ namespace HocVienPxc.DAL
         {
             using (SqlConnection conn = getConnect())
             {
-                return 1;
+                try
+                {
+                    conn.Open();
+                    SqlCommand myCommand = new SqlCommand("Update GiaiDoan set TenGiaiDoan = '" + obj.TenGiaiDoan + "', SoHocKy = '" + obj.SoHocKy + "' where MaGiaiDoan = '" + obj.MaGiaiDoan + "' ", conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                    return 1;
+                }
+                catch
+                {
+                    return 0;
+                }         
+            }
+        }
+        public int XoaGiaiDoan(GiaiDoan obj)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand myCommand = new SqlCommand("Delete * from GiaiDoan where MaGiaiDoan = '" + obj.MaGiaiDoan + "' ", conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                    return 1;
+                }
+                catch
+                {
+                    return 0;
+                }
             }
         }
     }
