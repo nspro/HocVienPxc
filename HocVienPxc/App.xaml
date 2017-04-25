@@ -25,6 +25,8 @@
         <SolidColorBrush x:Key="Color_Label_ColorE0E0E0E0" Color="#FFE0E0E0"/>
         <SolidColorBrush x:Key="Color_Label_Background_#FFF3F4F5" Color="#FFF3F4F5"/>
         <SolidColorBrush x:Key="Color_control_border_ACACAC" Color="#FFACACAC"/>
+        <SolidColorBrush x:Key="Color_Border_MouseOver" Color="#00FFFFFF"/>
+        
         <Color x:Key="Color_Text_Status_Online">#FF178000</Color>
 
     </Application.Resources>
