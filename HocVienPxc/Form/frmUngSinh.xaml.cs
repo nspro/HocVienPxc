@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using HocVienPxc.BOL;
 
 namespace HocVienPxc.Form
 {
@@ -22,6 +24,13 @@ namespace HocVienPxc.Form
         public frmUngSinh()
         {
             InitializeComponent();
+            ThongTinUngSinh();
+        }
+        public void ThongTinUngSinh()
+        {
+            ObservableCollection<UngSinh> lst = UngSinh.HienThiUngSinh(10);
+            txtHoTen.Text = lst[0].TenThanh;
+
         }
     }
 }

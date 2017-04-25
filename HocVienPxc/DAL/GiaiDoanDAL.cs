@@ -27,7 +27,7 @@ namespace HocVienPxc.DAL
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into GiaiDoan values('" + obj.MaGiaiDoan + "',N'" + obj.TenGiaiDoan + "','" + obj.SoHocKy + "')", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into GiaiDoan values(N'" + obj.TenGiaiDoan + "','" + obj.SoHocKy + "')", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteReader();
                     conn.Close();

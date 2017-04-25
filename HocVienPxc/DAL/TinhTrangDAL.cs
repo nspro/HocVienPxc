@@ -10,27 +10,25 @@ using HocVienPxc.BOL;
 
 namespace HocVienPxc.DAL
 {
-    public class MonHocDAL : BaseDAL
+    public class TinhTrangDAL:BaseDAL
     {
-        private MonHoc MonHocIDataReader(IDataReader Reader)
+        public TinhTrang TinhTrangIDataReader(IDataReader Reader)
         {
-            MonHoc obj = new MonHoc();
-            obj.MaMonHoc = (Reader["MaMonHoc"] is DBNull) ? int.MinValue : (int)Reader["MaMonHoc"];
-            obj.TenMonHoc = (Reader["TenMonHoc"] is DBNull) ? string.Empty : (string)Reader["TenMonHoc"];
-            obj.MaGiaiDoan = (Reader["MaGiaiDoan"] is DBNull) ? int.MinValue : (int)Reader["MaGiaiDoan"];
-            obj.ThongTinMonHoc = (Reader["ThongTinMonHoc"] is DBNull) ? string.Empty : (string)Reader["ThongTinMonHoc"];
+            TinhTrang obj = new TinhTrang();
+            obj.MaTinhTrang = (Reader["MaTinhTrang"] is DBNull) ? int.MinValue : (int)Reader["MaTinhTrang"];
+            obj.TenTinhTrang = (Reader["TenTinhTrang"] is DBNull) ? string.Empty : (string)Reader["TenTinhTrang"];
             return obj;
         }
-        public int ThemMonHoc(MonHoc obj)
+        public int ThemTinhTrang(TinhTrang obj)
         {
             using (SqlConnection conn = getConnect())
             {
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into MonHoc value('" + obj.TenMonHoc + "','" + obj.MaGiaiDoan + "','" + obj.ThongTinMonHoc + "') ", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into TinhTrang values(N'" + obj.TenTinhTrang + "')", conn);
                     myCommand.CommandType = CommandType.Text;
-                    myCommand.ExecuteNonQuery();
+                    myCommand.ExecuteReader();
                     conn.Close();
                     return 1;
                 }
@@ -40,16 +38,16 @@ namespace HocVienPxc.DAL
                 }
             }
         }
-        public int SuaMonHoc(MonHoc obj)
+        public int SuaTinhTrang(TinhTrang obj)
         {
             using (SqlConnection conn = getConnect())
             {
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Update MonHoc set TenMonHoc = '" + obj.TenMonHoc + "', MaGiaiDoan = '" + obj.MaGiaiDoan + "', ThongTinMonHoc = '" + obj.ThongTinMonHoc + "' where MaMonHoc = '" + obj.MaMonHoc + "' ", conn);
+                    SqlCommand myCommand = new SqlCommand("Update TinhTrang set TenTinhTrang = '"+obj.TenTinhTrang+"' where MaTinhTrang = '"+obj.MaTinhTrang+"' ", conn);
                     myCommand.CommandType = CommandType.Text;
-                    myCommand.ExecuteNonQuery();
+                    myCommand.ExecuteReader();
                     conn.Close();
                     return 1;
                 }
@@ -59,16 +57,16 @@ namespace HocVienPxc.DAL
                 }
             }
         }
-        public int XoaMonHoc(int MaMonHoc)
+        public int XoaTinhTrang(int MaTinhTrang)
         {
             using (SqlConnection conn = getConnect())
             {
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Delete * from MonHoc where MaMonHoc = '" + MaMonHoc + "' ", conn);
+                    SqlCommand myCommand = new SqlCommand("Delete * from TinhTrang where MaTinhTrang = '"+MaTinhTrang+"' ", conn);
                     myCommand.CommandType = CommandType.Text;
-                    myCommand.ExecuteNonQuery();
+                    myCommand.ExecuteReader();
                     conn.Close();
                     return 1;
                 }
@@ -78,20 +76,20 @@ namespace HocVienPxc.DAL
                 }
             }
         }
-        public ObservableCollection<MonHoc> HienThiTatCa()
+        public ObservableCollection<TinhTrang> HienThiTatCa()
         {
             using (SqlConnection conn = getConnect())
             {
                 conn.Open();
-                SqlCommand myCommand = new SqlCommand("Select * from MonHoc", conn);
+                SqlCommand myCommand = new SqlCommand("Select * from TinhTrang", conn);
                 myCommand.CommandType = CommandType.Text;
-                ObservableCollection<MonHoc> lst = new ObservableCollection<MonHoc>();
+                ObservableCollection<TinhTrang> lst = new ObservableCollection<TinhTrang>();
                 SqlDataReader Reader = myCommand.ExecuteReader();
                 if (Reader.HasRows)
                 {
                     while (Reader.Read())
                     {
-                        lst.Add(MonHocIDataReader(Reader));
+                        lst.Add(TinhTrangIDataReader(Reader));
                     }
                     Reader.Close();
                 }
@@ -99,20 +97,20 @@ namespace HocVienPxc.DAL
                 return lst;
             }
         }
-        public ObservableCollection<MonHoc> HienThiMonHoc(int MaMonHoc)
+        public ObservableCollection<TinhTrang> HienThiTinhTrang(int MaTinhTrang)
         {
             using (SqlConnection conn = getConnect())
             {
                 conn.Open();
-                SqlCommand myCommand = new SqlCommand("Select * from MonHoc where MaMonHoc = '" + MaMonHoc + "' ", conn);
+                SqlCommand myCommand = new SqlCommand("Select * from TinhTrang where MaTinhTrang = '"+MaTinhTrang+"' ", conn);
                 myCommand.CommandType = CommandType.Text;
-                ObservableCollection<MonHoc> lst = new ObservableCollection<MonHoc>();
+                ObservableCollection<TinhTrang> lst = new ObservableCollection<TinhTrang>();
                 SqlDataReader Reader = myCommand.ExecuteReader();
                 if (Reader.HasRows)
                 {
                     while (Reader.Read())
                     {
-                        lst.Add(MonHocIDataReader(Reader));
+                        lst.Add(TinhTrangIDataReader(Reader));
                     }
                     Reader.Close();
                 }

@@ -34,5 +34,30 @@ namespace HocVienPxc.BOL
             get { return _thongTinMonHoc; }
             set { _thongTinMonHoc = value; }
         }
+        public int ThemMonHoc(MonHoc obj)
+        {
+            MonHocDAL db = new MonHocDAL();
+            return db.ThemMonHoc(obj);
+        }
+        public int SuaMonHoc(MonHoc obj)
+        {
+            MonHocDAL db = new MonHocDAL();
+            return db.SuaMonHoc(obj);
+        }
+        public int XoaMonHoc(int MaMonHoc)
+        {
+            MonHocDAL db = new MonHocDAL();
+            return db.XoaMonHoc(MaMonHoc);
+        }
+        public static ObservableCollection<MonHoc> HienThiTatCa()
+        {
+            MonHocDAL db = new MonHocDAL();
+            return db.HienThiTatCa();
+        }
+        public static ObservableCollection<MonHoc> HienThiMonHoc(int MaMonHoc)
+        {
+            MonHocDAL db = new MonHocDAL();
+            return db.HienThiMonHoc(MaMonHoc);
+        }
     }
 }
