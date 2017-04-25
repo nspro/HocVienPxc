@@ -88,6 +88,8 @@ namespace HocVienPxc.DAL
                 try
                 {
                     conn.Open();
+                    BangDiemChiTietDAL db = new BangDiemChiTietDAL();
+                    db.XoaBangDiemChiTiet(IdBangDiemTongQuat);
                     SqlCommand myCommand = new SqlCommand("Delete * from BangDiemTongQuat where IdBangDiemTongQuat = '"+IdBangDiemTongQuat+"' ", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
