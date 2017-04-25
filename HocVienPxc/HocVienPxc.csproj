@@ -116,7 +116,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Form\img_avatar.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Asset\Graphic\Sample image\img_avatar.png" />
   </ItemGroup>
