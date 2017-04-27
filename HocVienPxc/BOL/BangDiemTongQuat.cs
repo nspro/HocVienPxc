@@ -16,7 +16,7 @@ namespace HocVienPxc.BOL
         int _maHocKy;
         int _maMonHoc;
         int _maLop;
-        float _diemTrungBinh;
+        double _diemTrungBinh;
         public int IdBangDiemTongQuat
         {
             get { return _idBangDiemTongQuat; }
@@ -47,10 +47,25 @@ namespace HocVienPxc.BOL
             get { return _maLop; }
             set { _maLop = value; }
         }
-        public float DiemTrungBinh
+        public double DiemTrungBinh
         {
             get { return _diemTrungBinh; }
             set { _diemTrungBinh = value; }
+        }
+        public int ThemBangDiemTongQuat(BangDiemTongQuat obj)
+        {
+            BangDiemTongQuatDAL db = new BangDiemTongQuatDAL();
+            return db.ThemBangDiemTongQuat(obj);
+        }
+        public int SuaBangDiemTongQuat(BangDiemTongQuat obj)
+        {
+            BangDiemTongQuatDAL db = new BangDiemTongQuatDAL();
+            return db.SuaBangDiemTongQuat(obj);
+        }
+        public int XoaBangDiemTongQuat(int IdBangDiemTongQuat)
+        {
+            BangDiemTongQuatDAL db = new BangDiemTongQuatDAL();
+            return db.XoaBangDiemTongQuat(IdBangDiemTongQuat);
         }
     }
 }

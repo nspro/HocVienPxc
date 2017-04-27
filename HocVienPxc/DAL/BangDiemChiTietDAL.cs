@@ -19,8 +19,8 @@ namespace HocVienPxc.DAL
             obj.IdBangDiemTongQuat = (Reader["IdBangDiemTongQuat"] is DBNull) ? int.MinValue : (int)Reader["IdBangDiemTongQuat"];
             obj.MaDauDiem = (Reader["MaDauDiem"] is DBNull) ? int.MinValue : (int)Reader["MaDauDiem"];
             obj.TenDauDiem = (Reader["TenDauDiem"] is DBNull) ? string.Empty : (string)Reader["TenDauDiem"];
-            obj.TrongSo = (Reader["TrongSo"] is DBNull) ? float.MinValue : (float)Reader["TrongSo"];
-            obj.Diem = (Reader["Diem"] is DBNull) ? float.MinValue : (float)Reader["Diem"];
+            obj.TrongSo = (Reader["TrongSo"] is DBNull) ? double.MinValue : (double)Reader["TrongSo"];
+            obj.Diem = (Reader["Diem"] is DBNull) ? double.MinValue : (double)Reader["Diem"];
             return obj;
         }
         public int ThemBangDiemChiTiet(BangDiemChiTiet obj)
@@ -53,6 +53,8 @@ namespace HocVienPxc.DAL
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
+                    BangDiemTongQuatDAL db = new BangDiemTongQuatDAL();
+                    db.CapNhatDiemTrungBinh(obj.IdBangDiemTongQuat, TinhDiemTrungBinh(obj.IdBangDiemTongQuat));
                     return 1;
                 }
                 catch
@@ -79,6 +81,37 @@ namespace HocVienPxc.DAL
                     return 0;
                 }
             }
+        }
+        public double TinhDiemTrungBinh(int IdBangDiemTongQuat)
+        {
+            double ketqua = 0;
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("Select * from BangDiemChiTiet where IdBangDiemTongQuat = '" + IdBangDiemTongQuat + "' ", conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<BangDiemChiTiet> lst = new ObservableCollection<BangDiemChiTiet>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        lst.Add(BangDiemChiTietIDataReader(Reader));
+                    }
+                    Reader.Close();
+                }
+                conn.Close();
+                if (lst.Count > 0)
+                {
+                    double diem = 0;
+                    for (int i=0; i<lst.Count;i++)
+                    {
+                        diem += (lst[i].TrongSo * lst[i].Diem)/100;
+                    }
+                    ketqua = diem;
+                }
+            }
+            return ketqua;
         }
     }
 }
