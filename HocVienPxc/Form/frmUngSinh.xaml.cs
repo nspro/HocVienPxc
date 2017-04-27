@@ -29,8 +29,8 @@ namespace HocVienPxc.Form
         public void ThongTinUngSinh()
         {
             ObservableCollection<UngSinh> lst = UngSinh.HienThiUngSinh(10);
-            txtHoTen.Text = lst[0].TenThanh;
-
+            txt_Stick_HoTen.Text = lst[0].TenThanh;
+            
         }
     }
 }

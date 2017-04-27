@@ -14,8 +14,8 @@ namespace HocVienPxc.BOL
         int _idBangDiemTongQuat;
         int _maDauDiem;
         string _tenDauDiem;
-        float _trongSo;
-        float _diem;
+        double _trongSo;
+        double _diem;
         public int IdBangDiemChiTiet
         {
             get { return _idBangDiemChiTiet; }
@@ -36,15 +36,20 @@ namespace HocVienPxc.BOL
             get { return _tenDauDiem; }
             set { _tenDauDiem = value; }
         }
-        public float TrongSo
+        public double TrongSo
         {
             get { return _trongSo; }
             set { _trongSo = value; }
         }
-        public float Diem
+        public double Diem
         {
             get { return _diem; }
             set { _diem = value; }
+        }
+        public static double TinhDiemTrungBinh(int IdBangDiemTongQuat)
+        {
+            BangDiemChiTietDAL db = new BangDiemChiTietDAL();
+            return db.TinhDiemTrungBinh(IdBangDiemTongQuat);
         }
     }
 }

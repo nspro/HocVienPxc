@@ -21,7 +21,7 @@ namespace HocVienPxc.DAL
             obj.MaHocKy = (Reader["MaHocKy"] is DBNull) ? int.MinValue : (int)Reader["MaHocKy"];
             obj.MaMonHoc = (Reader["MaMonHoc"] is DBNull) ? int.MinValue : (int)Reader["MaMonHoc"];
             obj.MaLop = (Reader["MaLop"] is DBNull) ? int.MinValue : (int)Reader["MaLop"];
-            obj.DiemTrungBinh = (Reader["DiemTrungBinh"] is DBNull) ? float.MinValue : (float)Reader["DiemTrungBinh"];
+            obj.DiemTrungBinh = (Reader["DiemTrungBinh"] is DBNull) ? double.MinValue : (double)Reader["DiemTrungBinh"];
             return obj;
         }
         public int ThemBangDiemTongQuat(BangDiemTongQuat obj)
@@ -62,7 +62,7 @@ namespace HocVienPxc.DAL
                 }
             }
         }
-        public int CapNhatDiemTrungBinh(int IdBangDiemTongQuat, float DiemTrungBinh)
+        public int CapNhatDiemTrungBinh(int IdBangDiemTongQuat, double DiemTrungBinh)
         {
             using (SqlConnection conn = getConnect())
             {
@@ -100,6 +100,69 @@ namespace HocVienPxc.DAL
                 {
                     return 0;
                 }
+            }
+        }
+        public ObservableCollection<BangDiemTongQuat> HienThiTatCa()
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("Select * from BangDiemTongQuat", conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<BangDiemTongQuat> lst = new ObservableCollection<BangDiemTongQuat>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        lst.Add(BangDiemTongQuatIDataReader(Reader));
+                    }
+                    Reader.Close();
+                }
+                conn.Close();
+                return lst;
+            }
+        }
+        public ObservableCollection<BangDiemTongQuat> HienThiTheoMaUngSinh(int MaUngSinh)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("Select * from BangDiemTongQuat where MaUngSinh = '" + MaUngSinh + "' ", conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<BangDiemTongQuat> lst = new ObservableCollection<BangDiemTongQuat>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        lst.Add(BangDiemTongQuatIDataReader(Reader));
+                    }
+                    Reader.Close();
+                }
+                conn.Close();
+                return lst;
+            }
+        }
+        public ObservableCollection<BangDiemTongQuat> HienThiTheoMaGiaiDoan(int MaGiaiDoan)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("Select * from BangDiemTongQuat where MaGiaiDoan = '" + MaGiaiDoan + "' ", conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<BangDiemTongQuat> lst = new ObservableCollection<BangDiemTongQuat>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        lst.Add(BangDiemTongQuatIDataReader(Reader));
+                    }
+                    Reader.Close();
+                }
+                conn.Close();
+                return lst;
             }
         }
     }
