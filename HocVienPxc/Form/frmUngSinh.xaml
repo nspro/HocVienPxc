@@ -19,8 +19,8 @@
         </Style>
     </Window.Resources>
 
-    <Grid Background="#F9F9F9F9" Height="575">
-        <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,10,0,0" Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}" Height="468" VerticalAlignment="Top">
+    <Grid Background="#F9F9F9F9" Margin="0">
+        <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,10,0,10" Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
             <Image x:Name="imgAvatar" Height="120" Margin="55,20,55,0" VerticalAlignment="Bottom" Source="img_avatar.jpg" Cursor="" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow1}" HorizontalAlignment="Center"/>
             <TextBox x:Name="txt_Stick_TenThanh" Height="20" TextWrapping="Wrap" Text="Giu-se" Margin="10,5,10,0" TextAlignment="Center" FontSize="14" FontFamily="Helvetica Neue" Padding="0,1,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF191919" Template="{DynamicResource Template_PersonInformation_textbox}" FontWeight="Bold" IsHitTestVisible="False"/>
             <TextBox x:Name="txt_Stick_HoTen" Height="18" TextWrapping="Wrap" Text="Phan Văn Nhất" Margin="10,0,10,20" TextAlignment="Center" FontSize="14" FontFamily="Helvetica Neue" Padding="0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF191919" Template="{DynamicResource Template_PersonInformation_textbox}" FontWeight="Bold" IsHitTestVisible="False"/>
@@ -73,10 +73,10 @@
             </Border>
 
         </StackPanel>
-        <TabControl x:Name="tabControl" Margin="210,5,5,90" BorderBrush="{DynamicResource Color_control_border_ACACAC}" Height="470">
+        <TabControl x:Name="tabControl" Margin="210,10,5,10" BorderBrush="{DynamicResource Color_control_border_ACACAC}" BorderThickness="1">
             <TabItem Header="Thông tin chi tiết">
                 <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
-                    <Canvas Margin="10,10,395,10">
+                    <Canvas Margin="10,10,395,30">
                         <Rectangle Fill="{DynamicResource Color_Label_Background_#FFF3F4F5}" Height="430" Width="150" HorizontalAlignment="Left"/>
                         <StackPanel Height="430" Width="392">
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
@@ -100,98 +100,98 @@
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_NgaySinh" Content="Ngày sinh" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_NgaySinh" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_NgaySinh" Height="35" TextWrapping="Wrap" Text="11-11-1992" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_NoiSinh" Content="Nơi sinh" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_NoiSinh" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_NoiSinh" Height="35" Text="Xóm 5, Diễn Hạnh, Diễn Châu, Nghệ An" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0" IsHitTestVisible="True"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_NguyenQuan" Content="Nguyên quán" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_NguyenQuan" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_NguyenQuan" Height="35" Text="K1, tt Yên Thành, Nghệ An" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_HoKhauThuongTru" Content="Hộ khẩu thường trú" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_HoKhauThuongTru" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_HoKhauThuongTru" Height="35" Text="K1, tt Yên Thành, Nghệ An" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_SoCMND" Content="Số CMND" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_SoCMND_" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_SoCMND_" Height="35" TextWrapping="Wrap" Text="187099131" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_NgayCapCMND" Content="Ngày cấp CMND" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_NgayCapCMND" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_NgayCapCMND" Height="35" TextWrapping="Wrap" Text="15-07-2015" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,0" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_NoiCapCMND" Content="Nơi cấp CMND" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="__" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="__" Height="35" TextWrapping="Wrap" Text="CA Nghệ An" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
 
                         </StackPanel>
                     </Canvas>
-                    <Canvas Margin="410,10,395,10" d:LayoutOverrides="Width">
+                    <Canvas Margin="410,10,0,30">
                         <Rectangle Fill="{DynamicResource Color_Label_Background_#FFF3F4F5}" Height="430" Width="150" HorizontalAlignment="Left"/>
                         <StackPanel Height="430" Width="392">
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5" Margin="0,0,10,0">
                                     <Label x:Name="lb_NgayRuaToi" Content="Ngày rửa tội" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_NgayRuaToi" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_NgayRuaToi" Height="35" TextWrapping="Wrap" Text="20-11-1992" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,10,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_GiaoXuRuaToi" Content="Giáo xứ rửa tội" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_GiaoXuRuaToi" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_GiaoXuRuaToi" Height="35" TextWrapping="Wrap" Text="Nghi Lộc" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
-                            
+
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_NgayThemSuc" Content="Ngày thêm sức" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_NgayThemSuc" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_NgayThemSuc" Height="35" TextWrapping="Wrap" Text="20-2-2000" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_GiaoXuThemSuc" Content="Giáo xứ thêm sức" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_GiaoXuThemSuc" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_GiaoXuThemSuc" Height="35" TextWrapping="Wrap" Text="Nghi Lộc" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_GiaoXu" Content="Giáo xứ" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_GiaoXu" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_GiaoXu" Height="35" TextWrapping="Wrap" Text="Nghi Lộc" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_GiaoPhan" Content="Giáo phận" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_GiaoPhan" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_GiaoPhan" Height="35" TextWrapping="Wrap" Text="Vinh" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_DienThoaiGiaoXu" Content="Điện thoại Giáo xứ" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_DienThoaiGiaoXu" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_DienThoaiGiaoXu" Height="35" TextWrapping="Wrap" Text="0988707727" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_DienThoaiCaNhan" Content="Điện thoại cá nhân" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="__2" Height="35" TextWrapping="Wrap" Text="TextBox" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="__2" Height="35" TextWrapping="Wrap" Text="0988707727" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0" HorizontalAlignment="Left">
@@ -199,10 +199,26 @@
                             </Border>
                         </StackPanel>
                     </Canvas>
+                    <StackPanel Height="25" Margin="10,0,7,2" VerticalAlignment="Bottom">
+                        <Button x:Name="btn_SuaThongTinUngSinh" Content="Sửa" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0" Height="25" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" BorderThickness="0.5">
+                            <Button.BorderBrush>
+                                <SolidColorBrush Color="#FF707070" Opacity="0.3"/>
+                            </Button.BorderBrush>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}"/>
+            <TabItem Header="Cá tính">
+                <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
+                    <StackPanel Margin="10,10,10,40">
+                        <RichTextBox x:Name="text_CaTinh" Height="404.833">
+                            <FlowDocument/>
+                        </RichTextBox>
+                    </StackPanel>
+                    <StackPanel Height="25" Margin="10,0,10,10" VerticalAlignment="Bottom">
+                        <Button x:Name="btn_SuaCaTinh" Content="Sửa" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0" Height="25" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" BorderThickness="0.5"/>
+                    </StackPanel>
+                </Grid>
             </TabItem>
         </TabControl>
 

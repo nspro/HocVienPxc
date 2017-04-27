@@ -90,6 +90,8 @@
     <Compile Include="Form\frmUngSinh.xaml.cs">
       <DependentUpon>frmUngSinh.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Func\func_ChuyenDoiTrangThaiObject.cs" />
+    <Compile Include="Func\func_DoiMau.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

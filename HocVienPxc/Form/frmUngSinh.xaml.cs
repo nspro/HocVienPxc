@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using HocVienPxc.BOL;
+using HocVienPxc.Func;
 
 namespace HocVienPxc.Form
 {
@@ -25,12 +26,15 @@ namespace HocVienPxc.Form
         {
             InitializeComponent();
             ThongTinUngSinh();
+            HocVienPxc.Func.func_ChuyenDoiTrangThaiObject fu = new func_ChuyenDoiTrangThaiObject();
+            fu.KhoaSuaThongTinUngSinh();
         }
         public void ThongTinUngSinh()
         {
-            ObservableCollection<UngSinh> lst = UngSinh.HienThiUngSinh(10);
-            txtHoTen.Text = lst[0].TenThanh;
+            //ObservableCollection<UngSinh> lst = UngSinh.HienThiUngSinh(10);
+                    //txtHoTen.Text = lst[0].TenThanh;
 
         }
+
     }
 }
