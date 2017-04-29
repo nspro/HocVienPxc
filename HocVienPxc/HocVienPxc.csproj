@@ -74,6 +74,8 @@
     <Compile Include="BOL\HocKy.cs" />
     <Compile Include="BOL\Lop.cs" />
     <Compile Include="BOL\MonHoc.cs" />
+    <Compile Include="BOL\QuyenHan.cs" />
+    <Compile Include="BOL\TaiKhoan.cs" />
     <Compile Include="BOL\TinhTrang.cs" />
     <Compile Include="BOL\TrongSo.cs" />
     <Compile Include="BOL\UngSinh.cs" />
@@ -84,6 +86,8 @@
     <Compile Include="DAL\HocKyDAL.cs" />
     <Compile Include="DAL\LopDAL.cs" />
     <Compile Include="DAL\MonHocDAL.cs" />
+    <Compile Include="DAL\QuyenHanDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDAL.cs" />
     <Compile Include="DAL\TinhTrangDAL.cs" />
     <Compile Include="DAL\TrongSoDAL.cs" />
     <Compile Include="DAL\UngSinhDAL.cs" />

@@ -67,5 +67,20 @@ namespace HocVienPxc.BOL
             BangDiemTongQuatDAL db = new BangDiemTongQuatDAL();
             return db.XoaBangDiemTongQuat(IdBangDiemTongQuat);
         }
+        public static ObservableCollection<BangDiemTongQuat> HienThiTatCa()
+        {
+            BangDiemTongQuatDAL db = new BangDiemTongQuatDAL();
+            return db.HienThiTatCa();
+        }
+        public static ObservableCollection<BangDiemTongQuat> HienThiTheoMaUngSinh(int MaUngSinh)
+        {
+            BangDiemTongQuatDAL db = new BangDiemTongQuatDAL();
+            return db.HienThiTheoMaUngSinh(MaUngSinh);
+        }
+        public static ObservableCollection<BangDiemTongQuat> HienThiTheoMaGiaiDoan(int MaGiaiDoan)
+        {
+            BangDiemTongQuatDAL db = new BangDiemTongQuatDAL();
+            return db.HienThiTheoMaGiaiDoan(MaGiaiDoan);
+        }
     }
 }

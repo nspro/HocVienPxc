@@ -30,7 +30,6 @@ namespace HocVienPxc.Form
         {
             ObservableCollection<UngSinh> lst = UngSinh.HienThiUngSinh(10);
             txt_Stick_HoTen.Text = lst[0].TenThanh;
-            
         }
     }
 }
