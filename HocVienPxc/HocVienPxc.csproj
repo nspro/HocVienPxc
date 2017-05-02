@@ -125,7 +125,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Form\img_avatar.jpg" />
+    <Resource Include="Asset\Graphic\Icon\img_avatar.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Asset\Graphic\Sample image\img_avatar.png" />
@@ -162,6 +162,15 @@
     <Resource Include="Asset\Graphic\Icon\img_icon_tick.png" />
     <Resource Include="Asset\Graphic\Icon\img_icon_update.png" />
     <Resource Include="Asset\Graphic\Icon\img_icon__view_detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\EditorIcon\img_editor_disk.png" />
+    <Resource Include="Asset\Graphic\EditorIcon\img_editor_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\EditorIcon\img_editor_textBold.png" />
+    <Resource Include="Asset\Graphic\EditorIcon\img_editor_textItalic.png" />
+    <Resource Include="Asset\Graphic\EditorIcon\img_editor_textUnderline.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

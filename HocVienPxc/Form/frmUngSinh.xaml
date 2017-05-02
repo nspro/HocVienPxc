@@ -18,10 +18,14 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
+    <!--<Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="btn_HTOG_Open_Executed" />
+        <CommandBinding Command="ApplicationCommands.Save" Executed="btn_HTOG_Save_Executed" />
+    </Window.CommandBindings>-->
 
     <Grid Background="#F9F9F9F9" Margin="0">
         <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,10,0,10" Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
-            <Image x:Name="imgAvatar" Height="120" Margin="55,20,55,0" VerticalAlignment="Bottom" Source="img_avatar.jpg" Cursor="" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow1}" HorizontalAlignment="Center"/>
+            <Image x:Name="imgAvatar" Height="120" Margin="55,20,55,0" VerticalAlignment="Bottom" Source="/HocVienPxc;component/Asset/Graphic/Icon/img_avatar.jpg" Cursor="" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow1}" HorizontalAlignment="Center"/>
             <TextBox x:Name="txt_Stick_TenThanh" Height="20" TextWrapping="Wrap" Text="Giu-se" Margin="10,5,10,0" TextAlignment="Center" FontSize="14" FontFamily="Helvetica Neue" Padding="0,1,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF191919" Template="{DynamicResource Template_PersonInformation_textbox}" FontWeight="Bold" IsHitTestVisible="False"/>
             <TextBox x:Name="txt_Stick_HoTen" Height="18" TextWrapping="Wrap" Text="Phan Văn Nhất" Margin="10,0,10,20" TextAlignment="Center" FontSize="14" FontFamily="Helvetica Neue" Padding="0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF191919" Template="{DynamicResource Template_PersonInformation_textbox}" FontWeight="Bold" IsHitTestVisible="False"/>
 
@@ -210,13 +214,28 @@
             </TabItem>
             <TabItem Header="Cá tính">
                 <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
-                    <StackPanel Margin="10,10,10,40">
-                        <RichTextBox x:Name="text_CaTinh" Height="404.833">
-                            <FlowDocument/>
-                        </RichTextBox>
-                    </StackPanel>
-                    <StackPanel Height="25" Margin="10,0,10,10" VerticalAlignment="Bottom">
-                        <Button x:Name="btn_SuaCaTinh" Content="Sửa" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0" Height="25" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" BorderThickness="0.5"/>
+                    <StackPanel Margin="10,10,10,0">
+                        <DockPanel>
+                            <ToolBar DockPanel.Dock="Top">
+                                <Button x:Name="btn_CaTinh_Luu">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_disk.png" Width="16" Height="16" />
+                                </Button>
+                                <Separator />
+                                <ToggleButton Command="EditingCommands.ToggleBold" Name="btn_CaTinh_Bold">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textBold.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleItalic" Name="btn_CaTinh_Italic">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textItalic.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btn_CaTinh_Undeline">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textUnderline.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator />
+                                <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged" />
+                                <ComboBox x:Name="cmb_CaTinh_FontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="rtb_CaTinh_Editor_TextChanged" Margin="0,0,0,0.02" VerticalAlignment="Bottom"/>
+                            </ToolBar>
+                            <RichTextBox Name="rtb_CaTinh_Editor" SelectionChanged="rtb_CaTinh_Editor_SelectionChanged" Height="431.666" />
+                        </DockPanel>
                     </StackPanel>
                 </Grid>
             </TabItem>
