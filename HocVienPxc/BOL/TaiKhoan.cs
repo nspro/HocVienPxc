@@ -28,6 +28,35 @@ namespace HocVienPxc.BOL
             get { return _maQuyenHan; }
             set { _maQuyenHan = value; }
         }
-        
+        public int ThemTaiKhoan(TaiKhoan obj)
+        {
+            TaiKhoanDAL db = new TaiKhoanDAL();
+            return db.ThemTaiKhoan(obj);
+        }
+        public int SuaTaiKhoan(TaiKhoan obj)
+        {
+            TaiKhoanDAL db = new TaiKhoanDAL();
+            return db.SuaTaiKhoan(obj);
+        }
+        public int XoaTaiKhoan(string Email)
+        {
+            TaiKhoanDAL db = new TaiKhoanDAL();
+            return db.XoaTaiKhoan(Email);
+        }
+        public static ObservableCollection<TaiKhoan> HienThiTatCa()
+        {
+            TaiKhoanDAL db = new TaiKhoanDAL();
+            return db.HienThiTatCa();
+        }
+        public static ObservableCollection<TaiKhoan> HienThiTaiKhoan(string Email)
+        {
+            TaiKhoanDAL db = new TaiKhoanDAL();
+            return db.HienThiTaiKhoan(Email);
+        }
+        public static ObservableCollection<TaiKhoan> KiemTraDangNhap(string Email, string Password)
+        {
+            TaiKhoanDAL db = new TaiKhoanDAL();
+            return db.KiemTraDangNhap(Email, Password);
+        }
     }
 }

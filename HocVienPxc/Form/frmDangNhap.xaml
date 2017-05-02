@@ -1,0 +1,18 @@
+﻿<Window x:Class="HocVienPxc.Form.frmDangNhap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HocVienPxc.Form"
+        mc:Ignorable="d"
+        Height="300" Width="300">
+    <Grid>
+        <Label x:Name="title" Content="HOCVIENPXC" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="80" Margin="10,108,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="272">
+            <TextBox.Background>
+                <ImageBrush ImageSource="..\Asset\Graphic\Icon\full\P2-Lighticons-full-006.png" AlignmentX="Right" Stretch="None" Opacity="0.2" />
+            </TextBox.Background>
+        </TextBox>
+
+    </Grid>
+</Window>
