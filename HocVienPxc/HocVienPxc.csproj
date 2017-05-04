@@ -176,6 +176,11 @@
     <Resource Include="Asset\Graphic\EditorIcon\img_editor_textItalic.png" />
     <Resource Include="Asset\Graphic\EditorIcon\img_editor_textUnderline.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\EditorIcon\img_editor_text_align_center.png" />
+    <Resource Include="Asset\Graphic\EditorIcon\img_editor_text_align_left.png" />
+    <Resource Include="Asset\Graphic\EditorIcon\img_editor_text_align_right.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

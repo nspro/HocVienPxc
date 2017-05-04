@@ -24,12 +24,78 @@ namespace HocVienPxc.Form
         public frmUngSinh()
         {
             InitializeComponent();
-            ThongTinUngSinh();
+
+            //load font
+            LoadFontAndSize();
+            
         }
-        public void ThongTinUngSinh()
+
+        private void LoadFontAndSize()
         {
-            ObservableCollection<UngSinh> lst = UngSinh.HienThiUngSinh(10);
-            txt_Stick_HoTen.Text = lst[0].TenThanh;
+            cmb_CaTinh_FontList.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            cmb_CaTinh_FontSize.ItemsSource = new List<double>() {14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
+
+            cmb_YThucDoiTu_FontList.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            cmb_YThucDoiTu_FontSize.ItemsSource = new List<double>() { 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
+        }
+
+
+        //START CA TINH
+        private void rtb_CaTinh_Editor_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            object temp = rtb_CaTinh_Editor.Selection.GetPropertyValue(Inline.FontWeightProperty);
+            btn_CaTinh_Bold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
+            temp = rtb_CaTinh_Editor.Selection.GetPropertyValue(Inline.FontStyleProperty);
+            btn_CaTinh_Italic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
+            temp = rtb_CaTinh_Editor.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            btn_CaTinh_Undeline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
+
+            temp = rtb_CaTinh_Editor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+            cmb_CaTinh_FontList.SelectedItem = temp;
+            temp = rtb_CaTinh_Editor.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            cmb_CaTinh_FontSize.Text = temp.ToString();
+        }
+
+        private void cmb_CaTinh_FontList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_CaTinh_FontList.SelectedItem != null)
+                rtb_CaTinh_Editor.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmb_CaTinh_FontList.SelectedItem);
+        }
+
+        private void rtb_CaTinh_Editor_TextChanged(object sender, RoutedEventArgs e)
+        {
+            rtb_CaTinh_Editor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmb_CaTinh_FontSize.Text);
+            btn_CaTinh_Luu.IsEnabled = true;
+        }
+
+        //END CA TINH
+
+        //START Y THUC DOI TU
+        private void rtb_YThucDoiTu_Editor_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            object temp = rtb_YThucDoiTu_Editor.Selection.GetPropertyValue(Inline.FontWeightProperty);
+            btn_YThucDoiTu_Bold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
+            temp = rtb_YThucDoiTu_Editor.Selection.GetPropertyValue(Inline.FontStyleProperty);
+            btn_YThucDoiTu_Italic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
+            temp = rtb_YThucDoiTu_Editor.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            btn_YThucDoiTu_Undeline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
+
+            temp = rtb_YThucDoiTu_Editor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+            cmb_YThucDoiTu_FontList.SelectedItem = temp;
+            temp = rtb_YThucDoiTu_Editor.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            cmb_YThucDoiTu_FontSize.Text = temp.ToString();
+        }
+
+        private void cmb_YThucDoiTu_FontList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_YThucDoiTu_FontList.SelectedItem != null)
+                rtb_YThucDoiTu_Editor.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmb_YThucDoiTu_FontList.SelectedItem);
+        }
+
+        private void rtb_YThucDoiTu_Editor_TextChanged(object sender, RoutedEventArgs e)
+        {
+            rtb_YThucDoiTu_Editor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmb_YThucDoiTu_FontSize.Text);
+            btn_YThucDoiTu_Luu.IsEnabled = true;
         }
     }
 }

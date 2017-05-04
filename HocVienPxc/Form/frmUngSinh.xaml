@@ -214,13 +214,9 @@
             </TabItem>
             <TabItem Header="Cá tính">
                 <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
-                    <StackPanel Margin="10,10,10,0">
-                        <DockPanel>
+                    <StackPanel Margin="10,10,10,30">
+                        <DockPanel Height="431.667">
                             <ToolBar DockPanel.Dock="Top">
-                                <Button x:Name="btn_CaTinh_Luu">
-                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_disk.png" Width="16" Height="16" />
-                                </Button>
-                                <Separator />
                                 <ToggleButton Command="EditingCommands.ToggleBold" Name="btn_CaTinh_Bold">
                                     <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textBold.png" Width="16" Height="16" />
                                 </ToggleButton>
@@ -231,14 +227,89 @@
                                     <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textUnderline.png" Width="16" Height="16" />
                                 </ToggleButton>
                                 <Separator />
-                                <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged" />
+                                <ToggleButton Command="EditingCommands.AlignLeft" Name="btn_CaTinh_Left">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_left.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignCenter" Name="btn_CaTinh_Center">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_center.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignRight" Name="btn_CaTinh_Right">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_right.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator/>
+                                <ComboBox Name="cmb_CaTinh_FontList" Width="150" SelectionChanged="cmb_CaTinh_FontList_SelectionChanged" />
                                 <ComboBox x:Name="cmb_CaTinh_FontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="rtb_CaTinh_Editor_TextChanged" Margin="0,0,0,0.02" VerticalAlignment="Bottom"/>
                             </ToolBar>
-                            <RichTextBox Name="rtb_CaTinh_Editor" SelectionChanged="rtb_CaTinh_Editor_SelectionChanged" Height="431.666" />
+                            <RichTextBox Name="rtb_CaTinh_Editor" SelectionChanged="rtb_CaTinh_Editor_SelectionChanged" Margin="0,0,0,10" FontSize="14" FontFamily="Times New Roman" >
+                                <FlowDocument>
+                                    <Paragraph LineHeight="5" TextAlignment="Justify">
+                                        <Run Text=""/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
                         </DockPanel>
+                    </StackPanel>
+                    <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
+                        <Button x:Name="btn_CaTinh_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                            <Button.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                            </Button.Background>
+                        </Button>
+
                     </StackPanel>
                 </Grid>
             </TabItem>
+
+            <!--Ý thức đời tu-->
+            <TabItem Header="Ý thức đời tu" Margin="-2,-2,-2,0">
+                <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
+                    <StackPanel Margin="10,10,10,30">
+                        <DockPanel Height="431.667">
+                            <ToolBar DockPanel.Dock="Top">
+                                <ToggleButton Command="EditingCommands.ToggleBold" x:Name="btn_YThucDoiTu_Bold">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textBold.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleItalic" x:Name="btn_YThucDoiTu_Italic">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textItalic.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleUnderline" x:Name="btn_YThucDoiTu_Undeline">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textUnderline.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator />
+                                <ToggleButton Command="EditingCommands.AlignLeft" x:Name="btn_YThucDoiTu_Left">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_left.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignCenter" x:Name="btn_YThucDoiTu_Center">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_center.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignRight" x:Name="btn_YThucDoiTu_Right">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_right.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator/>
+                                <ComboBox x:Name="cmb_YThucDoiTu_FontList" Width="150" SelectionChanged="cmb_YThucDoiTu_FontList_SelectionChanged" />
+                                <ComboBox x:Name="cmb_YThucDoiTu_FontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="rtb_YThucDoiTu_Editor_TextChanged" Margin="0,0,0,0.02" VerticalAlignment="Bottom"/>
+                            </ToolBar>
+                            <RichTextBox x:Name="rtb_YThucDoiTu_Editor" SelectionChanged="rtb_YThucDoiTu_Editor_SelectionChanged" Margin="0,0,0,10" FontSize="14" FontFamily="Times New Roman" >
+                                <FlowDocument>
+                                    <Paragraph LineHeight="5" TextAlignment="Justify">
+                                        <Run Text=""/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </DockPanel>
+                    </StackPanel>
+                    <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
+                        <Button x:Name="btn_YThucDoiTu_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                            <Button.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                            </Button.Background>
+                        </Button>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+           
         </TabControl>
 
     </Grid>
