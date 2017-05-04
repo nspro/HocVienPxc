@@ -21,7 +21,7 @@ namespace HocVienPxc.Form
     {
         public frmDangNhap()
         {
-            InitializeComponent();
+           // InitializeComponent();
         }
     }
 }
