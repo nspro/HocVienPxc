@@ -28,7 +28,7 @@ namespace HocVienPxc.DAL
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into MonHoc value('" + obj.TenMonHoc + "','" + obj.MaGiaiDoan + "','" + obj.ThongTinMonHoc + "') ", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into MonHoc values('" + obj.TenMonHoc + "','" + obj.MaGiaiDoan + "','" + obj.ThongTinMonHoc + "') ", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();

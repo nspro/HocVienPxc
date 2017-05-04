@@ -8,11 +8,12 @@
         Height="300" Width="300">
     <Grid>
         <Label x:Name="title" Content="HOCVIENPXC" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="80" Margin="10,108,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="272">
-            <TextBox.Background>
-                <ImageBrush ImageSource="..\Asset\Graphic\Icon\full\P2-Lighticons-full-006.png" AlignmentX="Right" Stretch="None" Opacity="0.2" />
-            </TextBox.Background>
-        </TextBox>
-
+        <TextBox x:Name="txt_Email" HorizontalAlignment="Left" Height="25" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" BorderBrush="#FF00E0E7" Text="Địa chỉ Email"/>
+        <TextBox x:Name="txt_Password" HorizontalAlignment="Left" Height="25" Margin="10,137,0,0" TextWrapping="Wrap" Text="Mật khẩu" VerticalAlignment="Top" Width="272" BorderBrush="#FF00DFE7"/>
+        <Button x:Name="btn_DangNhap" Content="Button" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="272" Height="38" Background="#FF00DFE7" BorderBrush="{x:Null}" Click="btn_DangNhap_Click"/>
+        <Image x:Name="image_email" HorizontalAlignment="Left" Height="25" Margin="253,107,0,0" VerticalAlignment="Top" Width="29" Source="../Asset/Graphic/ico/email-4-24.png"/>
+        <Image x:Name="img_pass" HorizontalAlignment="Left" Height="25" Margin="253,137,0,0" VerticalAlignment="Top" Width="29" Source="../Asset/Graphic/ico/password-6-24.png"/>
     </Grid>
+
 </Window>
+    

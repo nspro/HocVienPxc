@@ -26,7 +26,7 @@ namespace HocVienPxc.DAL
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into HocKy value('" + obj.TenHocKy + "') ", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into HocKy values('" + obj.TenHocKy + "') ", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
