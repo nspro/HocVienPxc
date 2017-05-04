@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using HocVienPxc.BOL;
+using Microsoft.Win32;
+using System.IO;
 
 namespace HocVienPxc.Form
 {
@@ -32,6 +34,9 @@ namespace HocVienPxc.Form
 
         private void LoadFontAndSize()
         {
+            cmb_LichSuOnGoi_FontList.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            cmb_LichSuOnGoi_FontSize.ItemsSource = new List<double>() { 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
+
             cmb_CaTinh_FontList.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
             cmb_CaTinh_FontSize.ItemsSource = new List<double>() {14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
 
@@ -53,6 +58,47 @@ namespace HocVienPxc.Form
             cmb_NhanDinhDiem_FontList.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
             cmb_NhanDinhDiem_FontSize.ItemsSource = new List<double>() { 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
         }
+
+        //START LỊCH SỬ ƠN GỌI
+        private void rtb_LichSuOnGoi_Editor_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            object temp = rtb_LichSuOnGoi_Editor.Selection.GetPropertyValue(Inline.FontWeightProperty);
+            btn_LichSuOnGoi_Bold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
+            temp = rtb_LichSuOnGoi_Editor.Selection.GetPropertyValue(Inline.FontStyleProperty);
+            btn_LichSuOnGoi_Italic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
+            temp = rtb_LichSuOnGoi_Editor.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            btn_LichSuOnGoi_Undeline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
+
+            temp = rtb_LichSuOnGoi_Editor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+            cmb_LichSuOnGoi_FontList.SelectedItem = temp;
+            temp = rtb_LichSuOnGoi_Editor.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            cmb_LichSuOnGoi_FontSize.Text = temp.ToString();
+        }
+
+        private void cmb_LichSuOnGoi_FontList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_LichSuOnGoi_FontList.SelectedItem != null)
+                rtb_LichSuOnGoi_Editor.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmb_LichSuOnGoi_FontList.SelectedItem);
+        }
+
+        private void cmb_LichSuOnGoi_TextChanged(object sender, RoutedEventArgs e)
+        {
+            rtb_LichSuOnGoi_Editor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmb_LichSuOnGoi_FontSize.Text);
+            btn_LichSuOnGoi_Luu.IsEnabled = true;
+        }
+        private void btn_HanhTrinhOnGoi_Mo_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
+            if (dlg.ShowDialog() == true)
+            {
+                FileStream fileStream = new FileStream(dlg.FileName, FileMode.Open);
+                TextRange range = new TextRange(rtb_LichSuOnGoi_Editor.Document.ContentStart, rtb_LichSuOnGoi_Editor.Document.ContentEnd);
+                range.Load(fileStream, DataFormats.Rtf);
+            }
+        }
+
+        //END LỊCH SỬ ƠN GỌI
 
 
         //START CA TINH
@@ -258,6 +304,8 @@ namespace HocVienPxc.Form
             rtb_NhanDinhDiem_Editor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmb_NhanDinhDiem_FontSize.Text);
             btn_NhanDinhDiem_Luu.IsEnabled = true;
         }
+
+    
         //END ĐIỂM
     }
 }

@@ -18,10 +18,10 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <!--<Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Open" Executed="btn_HTOG_Open_Executed" />
-        <CommandBinding Command="ApplicationCommands.Save" Executed="btn_HTOG_Save_Executed" />
-    </Window.CommandBindings>-->
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="btn_HanhTrinhOnGoi_Mo_Executed" />
+        <!--<CommandBinding Command="ApplicationCommands.Save" Executed="btn_HanhTrinhOnGoi_Luu_Executed" />-->
+    </Window.CommandBindings>
 
     <Grid Background="#F9F9F9F9" Margin="0">
         <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,10,0,10" Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
@@ -212,6 +212,62 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
+
+            <!--Lịch sử ơn gọi-->
+            <TabItem Header="Lịch sử Ơn gọi">
+                <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
+                    <StackPanel Margin="10,10,10,30">
+                        <DockPanel Height="431.667">
+                            <ToolBar DockPanel.Dock="Top">
+                                <ToggleButton Command="EditingCommands.ToggleBold" Name="btn_LichSuOnGoi_Bold">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textBold.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleItalic" Name="btn_LichSuOnGoi_Italic">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textItalic.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btn_LichSuOnGoi_Undeline">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textUnderline.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator />
+                                <ToggleButton Command="EditingCommands.AlignLeft" Name="btn_LichSuOnGoi_Left">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_left.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignCenter" Name="btn_LichSuOnGoi_Center">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_center.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignRight" Name="btn_LichSuOnGoi_Right">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_right.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator/>
+                                <ComboBox Name="cmb_LichSuOnGoi_FontList" Width="150" SelectionChanged="cmb_LichSuOnGoi_FontList_SelectionChanged" />
+                                <ComboBox x:Name="cmb_LichSuOnGoi_FontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmb_LichSuOnGoi_TextChanged" Margin="0,0,0,0.02" VerticalAlignment="Bottom"/>
+                            </ToolBar>
+                            <RichTextBox Name="rtb_LichSuOnGoi_Editor" SelectionChanged="rtb_LichSuOnGoi_Editor_SelectionChanged" Margin="0,0,0,10" FontSize="14" FontFamily="Times New Roman" >
+                                <FlowDocument>
+                                    <Paragraph LineHeight="5" TextAlignment="Justify">
+                                        <Run Text=""/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </DockPanel>
+                    </StackPanel>
+                    
+                    <DockPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
+                        <Button x:Name="btn_LichSuOnGoi_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False" DockPanel.Dock="Right">
+                            <Button.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="btn_LichSuOnGoi_Mo" Content="Mở"  HorizontalAlignment="Right" Height="25" Margin="0,0,10,0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" DockPanel.Dock="Right" Command="ApplicationCommands.Open">
+                            <Button.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                            </Button.Background>
+                        </Button>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+
+            <!--Cá tính-->
             <TabItem Header="Cá tính">
                 <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
                     <StackPanel Margin="10,10,10,30">
