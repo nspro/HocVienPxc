@@ -26,7 +26,7 @@ namespace HocVienPxc.DAL
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into QuyenHan value('" + obj.TenQuyenHan + "') ", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into QuyenHan values('" + obj.TenQuyenHan + "') ", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
