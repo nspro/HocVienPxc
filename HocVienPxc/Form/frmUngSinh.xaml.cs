@@ -46,6 +46,12 @@ namespace HocVienPxc.Form
 
             cmb_NhanDinhOnGoi_FontList.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
             cmb_NhanDinhOnGoi_FontSize.ItemsSource = new List<double>() { 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
+
+            cmb_SucKhoe_FontList.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            cmb_SucKhoe_FontSize.ItemsSource = new List<double>() { 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
+
+            cmb_NhanDinhDiem_FontList.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            cmb_NhanDinhDiem_FontSize.ItemsSource = new List<double>() { 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
         }
 
 
@@ -194,5 +200,64 @@ namespace HocVienPxc.Form
             btn_NhanDinhOnGoi_Luu.IsEnabled = true;
         }
         //END NHẬN ĐỊNH ƠN GỌI
+
+        //START SỨC KHỎE
+        private void rtb_SucKhoe_Editor_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            object temp = rtb_SucKhoe_Editor.Selection.GetPropertyValue(Inline.FontWeightProperty);
+            btn_SucKhoe_Bold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
+            temp = rtb_SucKhoe_Editor.Selection.GetPropertyValue(Inline.FontStyleProperty);
+            btn_SucKhoe_Italic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
+            temp = rtb_SucKhoe_Editor.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            btn_SucKhoe_Undeline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
+
+            temp = rtb_SucKhoe_Editor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+            cmb_SucKhoe_FontList.SelectedItem = temp;
+            temp = rtb_SucKhoe_Editor.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            cmb_SucKhoe_FontSize.Text = temp.ToString();
+        }
+
+        private void cmb_SucKhoe_FontList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_SucKhoe_FontList.SelectedItem != null)
+                rtb_SucKhoe_Editor.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmb_SucKhoe_FontList.SelectedItem);
+        }
+
+        private void cmb_SucKhoe_TextChanged(object sender, RoutedEventArgs e)
+        {
+            rtb_SucKhoe_Editor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmb_SucKhoe_FontSize.Text);
+            btn_SucKhoe_Luu.IsEnabled = true;
+        }
+        //END SỨC KHỎE
+
+
+        //START ĐIỂM
+        private void rtb_NhanDinhDiem_Editor_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            object temp = rtb_NhanDinhDiem_Editor.Selection.GetPropertyValue(Inline.FontWeightProperty);
+            btn_NhanDinhDiem_Bold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
+            temp = rtb_NhanDinhDiem_Editor.Selection.GetPropertyValue(Inline.FontStyleProperty);
+            btn_NhanDinhDiem_Italic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
+            temp = rtb_NhanDinhDiem_Editor.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            btn_NhanDinhDiem_Undeline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
+
+            temp = rtb_NhanDinhDiem_Editor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+            cmb_NhanDinhDiem_FontList.SelectedItem = temp;
+            temp = rtb_NhanDinhDiem_Editor.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            cmb_NhanDinhDiem_FontSize.Text = temp.ToString();
+        }
+
+        private void cmb_NhanDinhDiem_FontList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_NhanDinhDiem_FontList.SelectedItem != null)
+                rtb_NhanDinhDiem_Editor.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmb_NhanDinhDiem_FontList.SelectedItem);
+        }
+
+        private void cmb_NhanDinhDiem_TextChanged(object sender, RoutedEventArgs e)
+        {
+            rtb_NhanDinhDiem_Editor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmb_NhanDinhDiem_FontSize.Text);
+            btn_NhanDinhDiem_Luu.IsEnabled = true;
+        }
+        //END ĐIỂM
     }
 }

@@ -83,6 +83,7 @@
     <Compile Include="BOL\TinhTrang.cs" />
     <Compile Include="BOL\TrongSo.cs" />
     <Compile Include="BOL\UngSinh.cs" />
+    <Compile Include="Chia se link.cs" />
     <Compile Include="DAL\BangDiemChiTietDAL.cs" />
     <Compile Include="DAL\BangDiemTongQuatDAL.cs" />
     <Compile Include="DAL\BaseDAL.cs" />

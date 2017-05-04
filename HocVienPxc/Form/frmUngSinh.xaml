@@ -451,6 +451,102 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
+
+            <!--Sức khỏe-->
+            <TabItem Header="Sức khỏe" Margin="-2,-2,-2,0">
+                <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
+                    <StackPanel Margin="10,10,10,30">
+                        <DockPanel Height="431.667">
+                            <ToolBar DockPanel.Dock="Top">
+                                <ToggleButton Command="EditingCommands.ToggleBold" x:Name="btn_SucKhoe_Bold">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textBold.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleItalic" x:Name="btn_SucKhoe_Italic">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textItalic.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleUnderline" x:Name="btn_SucKhoe_Undeline">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textUnderline.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator />
+                                <ToggleButton Command="EditingCommands.AlignLeft" x:Name="btn_SucKhoe_Left">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_left.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignCenter" x:Name="btn_SucKhoe_Center">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_center.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignRight" x:Name="btn_SucKhoe_Right">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_right.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator/>
+                                <ComboBox x:Name="cmb_SucKhoe_FontList" Width="150" SelectionChanged="cmb_SucKhoe_FontList_SelectionChanged" />
+                                <ComboBox x:Name="cmb_SucKhoe_FontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmb_SucKhoe_TextChanged" Margin="0,0,0,0.02" VerticalAlignment="Bottom"/>
+                            </ToolBar>
+                            <RichTextBox x:Name="rtb_SucKhoe_Editor" SelectionChanged="rtb_SucKhoe_Editor_SelectionChanged" Margin="0,0,0,10" FontSize="14" FontFamily="Times New Roman" >
+                                <FlowDocument>
+                                    <Paragraph LineHeight="5" TextAlignment="Justify">
+                                        <Run Text=""/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </DockPanel>
+                    </StackPanel>
+                    <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
+                        <Button x:Name="btn_SucKhoe_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                            <Button.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!--Nhận định điểm-->
+            <TabItem Header="Nhận định điểm" Margin="-2,-2,-2,0">
+                <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
+                    <StackPanel Margin="10,10,10,30">
+                        <DockPanel Height="431.667">
+                            <ToolBar DockPanel.Dock="Top">
+                                <ToggleButton Command="EditingCommands.ToggleBold" x:Name="btn_NhanDinhDiem_Bold">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textBold.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleItalic" x:Name="btn_NhanDinhDiem_Italic">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textItalic.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.ToggleUnderline" x:Name="btn_NhanDinhDiem_Undeline">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_textUnderline.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator />
+                                <ToggleButton Command="EditingCommands.AlignLeft" x:Name="btn_NhanDinhDiem_Left">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_left.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignCenter" x:Name="btn_NhanDinhDiem_Center">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_center.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton Command="EditingCommands.AlignRight" x:Name="btn_NhanDinhDiem_Right">
+                                    <Image Source="/HocVienPxc;component/Asset/Graphic/EditorIcon/img_editor_text_align_right.png" Width="16" Height="16" />
+                                </ToggleButton>
+                                <Separator/>
+                                <ComboBox x:Name="cmb_NhanDinhDiem_FontList" Width="150" SelectionChanged="cmb_NhanDinhDiem_FontList_SelectionChanged" />
+                                <ComboBox x:Name="cmb_NhanDinhDiem_FontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmb_NhanDinhDiem_TextChanged" Margin="0,0,0,0.02" VerticalAlignment="Bottom"/>
+                            </ToolBar>
+                            <RichTextBox x:Name="rtb_NhanDinhDiem_Editor" SelectionChanged="rtb_NhanDinhDiem_Editor_SelectionChanged" Margin="0,0,0,10" FontSize="14" FontFamily="Times New Roman" >
+                                <FlowDocument>
+                                    <Paragraph LineHeight="5" TextAlignment="Justify">
+                                        <Run Text=""/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </DockPanel>
+                    </StackPanel>
+                    <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
+                        <Button x:Name="btn_NhanDinhDiem_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                            <Button.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
         </TabControl>
 
     </Grid>
