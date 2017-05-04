@@ -41,19 +41,14 @@ namespace HocVienPxc.DAL
         {
             using (SqlConnection conn = getConnect())
             {
-                try
-                {
+                
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into TaiKhoan value('" + obj.Email + "','" + MaHoaMD5(obj.Password) + "','" + obj.MaQuyenHan + "') ", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into TaiKhoan values('" + obj.Email + "','" + MaHoaMD5(obj.Password) + "','" + obj.MaQuyenHan + "') ", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
                     return 1;
-                }
-                catch
-                {
-                    return 0;
-                }
+               
             }
         }
         public int SuaTaiKhoan(TaiKhoan obj)

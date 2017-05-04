@@ -30,7 +30,7 @@ namespace HocVienPxc.DAL
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into BangDiemChiTiet value('" + obj.IdBangDiemChiTiet + "','" + obj.IdBangDiemTongQuat + "','" + obj.MaDauDiem + "',N'" + obj.TenDauDiem + "','" + obj.TrongSo + "','" + obj.Diem + "') ", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into BangDiemChiTiet values('" + obj.IdBangDiemChiTiet + "','" + obj.IdBangDiemTongQuat + "','" + obj.MaDauDiem + "',N'" + obj.TenDauDiem + "','" + obj.TrongSo + "','" + obj.Diem + "') ", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
