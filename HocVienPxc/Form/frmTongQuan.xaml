@@ -1,0 +1,30 @@
+﻿<Window x:Class="HocVienPxc.Form.frmTongQuan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HocVienPxc.Form"
+        mc:Ignorable="d" Height="550" Width="1024" Icon="/HocVienPxc;component/Asset/Graphic/Icon/img_icon_student.png" ResizeMode="NoResize" Title="Trang tổng quan">
+    <Window.Resources>
+        <SolidColorBrush x:Key="color_Personal_Backgroud" Color="Gainsboro"/>
+        <DropShadowBitmapEffect x:Key="Style_Object_Drop_Shadow1" Color="Black" Direction="300" ShadowDepth="2" Softness="0.15" Opacity="0.3"/>
+        <DropShadowBitmapEffect x:Key="Style_Object_Drop_Shadow2" Color="Black" Direction="250" Softness="0.3" Opacity="0.3" ShadowDepth="1"/>
+        <Style x:Key="Triggers" TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property = "BorderBrush" Value="{Binding Color_Border_MouseOver}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#F9F9F9F9" Margin="0">
+        <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,10,0,10" Background="#FF333333" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
+            
+
+        </StackPanel>
+        <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" Margin="210,10,10,10" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
+        </Grid>
+
+
+    </Grid>
+</Window>

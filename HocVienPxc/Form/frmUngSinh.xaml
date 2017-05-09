@@ -128,7 +128,7 @@
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_SoCMND" Content="Số CMND" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="text_SoCMND_" Height="35" TextWrapping="Wrap" Text="187099131" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_SoCMND" Height="35" TextWrapping="Wrap" Text="187099131" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
@@ -140,7 +140,7 @@
                             <Border BorderThickness="0,0,0,0" BorderBrush="{DynamicResource Color_Label_ColorE0E0E0E0}" Margin="0,0,0,0">
                                 <StackPanel Orientation="Horizontal" Height="41.5">
                                     <Label x:Name="lb_NoiCapCMND" Content="Nơi cấp CMND" Height="35" Width="150" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5"/>
-                                    <TextBox x:Name="__" Height="35" TextWrapping="Wrap" Text="CA Nghệ An" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
+                                    <TextBox x:Name="text_NoiCapCMND" Height="35" TextWrapping="Wrap" Text="CA Nghệ An" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Helvetica Neue" FontSize="14" Padding="0,8,0,0" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Border>
 
