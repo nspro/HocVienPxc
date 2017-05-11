@@ -210,6 +210,15 @@
     <Resource Include="Asset\Graphic\Icon\img_icon_login_email.png" />
     <Resource Include="Asset\Graphic\Icon\img_icon_login_password.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\MenuIcon\img_icon_menu_config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\MenuIcon\img_icon_menu_list_student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\MenuIcon\img_icon_menu_logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
