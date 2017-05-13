@@ -60,6 +60,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Form\frmThemUngSinh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmTongQuan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form\frmUngSinh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +106,12 @@
     <Compile Include="DAL\UngSinhDAL.cs" />
     <Compile Include="Form\frmDangNhap.xaml.cs">
       <DependentUpon>frmDangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemUngSinh.xaml.cs">
+      <DependentUpon>frmThemUngSinh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmTongQuan.xaml.cs">
+      <DependentUpon>frmTongQuan.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\frmUngSinh.xaml.cs">
       <DependentUpon>frmUngSinh.xaml</DependentUpon>
@@ -188,6 +202,22 @@
     <Resource Include="Asset\Graphic\EditorIcon\img_editor_text_align_center.png" />
     <Resource Include="Asset\Graphic\EditorIcon\img_editor_text_align_left.png" />
     <Resource Include="Asset\Graphic\EditorIcon\img_editor_text_align_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\Icon\img_icon_add_avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\Icon\img_icon_login_email.png" />
+    <Resource Include="Asset\Graphic\Icon\img_icon_login_password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\MenuIcon\img_icon_menu_config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\MenuIcon\img_icon_menu_list_student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\MenuIcon\img_icon_menu_logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
