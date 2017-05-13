@@ -136,7 +136,7 @@ namespace HocVienPxc.DAL
             using (SqlConnection conn = getConnect())
             {
                 conn.Open();
-                SqlCommand myCommand = new SqlCommand("Select * from TaiKhoan where Email = '" + Email + "' and Password = '"+MaHoaMD5(Password)+"' ", conn);
+                SqlCommand myCommand = new SqlCommand("Select * from TaiKhoan where Email = N'" + Email + "' and Password = '"+MaHoaMD5(Password)+"' ", conn);
                 myCommand.CommandType = CommandType.Text;
                 ObservableCollection<TaiKhoan> lst = new ObservableCollection<TaiKhoan>();
                 SqlDataReader Reader = myCommand.ExecuteReader();
