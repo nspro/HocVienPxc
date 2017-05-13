@@ -27,13 +27,7 @@ namespace HocVienPxc.Form
 
         private void btn_DangNhap_Click(object sender, RoutedEventArgs e)
         {
-            //TaiKhoan obj = new TaiKhoan();
-            //obj.Email = "ad.nspro@gmail.com";
-            //obj.Password = "123";
-            //obj.MaQuyenHan = 1;
-            //obj.ThemTaiKhoan(obj);
-
-            if (TaiKhoan.KiemTraDangNhap(txt_Email.Text, txt_Password.Text) != null)
+            if (TaiKhoan.KiemTraDangNhap(txt_Email.Text, txt_Password.Text).Count == 1 )
             {
                 MessageBox.Show("Dang nhap thanh cong");
             }

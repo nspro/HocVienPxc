@@ -12,7 +12,7 @@ namespace HocVienPxc.BOL
     {
         int _maLop;
         string _tenLop;
-        string _namBatDau;
+        DateTime _namBatDau;
         int _maGiaiDoan;
         int _maHocKy;
         public int MaLop
@@ -35,7 +35,7 @@ namespace HocVienPxc.BOL
             get { return _tenLop; }
             set { _tenLop = value; }
         }
-        public string NamBatDau
+        public DateTime NamBatDau
         {
             get { return _namBatDau; }
             set { _namBatDau = value; }
