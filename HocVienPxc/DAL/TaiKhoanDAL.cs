@@ -17,7 +17,7 @@ namespace HocVienPxc.DAL
         {
             TaiKhoan obj = new TaiKhoan();
             obj.Email = (Reader["Email"] is DBNull) ? string.Empty : (string)Reader["Email"];
-            obj.Password = (Reader["Password"] is DBNull) ? string.Empty : (string)Reader["Password"];
+            obj.Password = (Reader["Pass"] is DBNull) ? string.Empty : (string)Reader["Pass"];
             obj.MaQuyenHan = (Reader["MaQuyenHan"] is DBNull) ? int.MinValue : (int)Reader["MaQuyenHan"];
             return obj;
         }
@@ -58,7 +58,7 @@ namespace HocVienPxc.DAL
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Update TaiKhoan set Password = '"+obj.Password+"', MaQuyenHan = '"+obj.MaQuyenHan+"' where Email = '"+obj.Email+"' ", conn);
+                    SqlCommand myCommand = new SqlCommand("Update TaiKhoan set Pass = '"+obj.Password+"', MaQuyenHan = '"+obj.MaQuyenHan+"' where Email = '"+obj.Email+"' ", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();
@@ -136,7 +136,7 @@ namespace HocVienPxc.DAL
             using (SqlConnection conn = getConnect())
             {
                 conn.Open();
-                SqlCommand myCommand = new SqlCommand("Select * from TaiKhoan where Email = '" + Email + "' and Password = '"+MaHoaMD5(Password)+"' ", conn);
+                SqlCommand myCommand = new SqlCommand("Select * from TaiKhoan where Email = N'" + Email + "' and Pass = '"+MaHoaMD5(Password)+"' ", conn);
                 myCommand.CommandType = CommandType.Text;
                 ObservableCollection<TaiKhoan> lst = new ObservableCollection<TaiKhoan>();
                 SqlDataReader Reader = myCommand.ExecuteReader();

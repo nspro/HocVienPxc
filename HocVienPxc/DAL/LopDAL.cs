@@ -17,7 +17,7 @@ namespace HocVienPxc.DAL
             Lop obj = new Lop();
             obj.MaLop = (Reader["MaLop"] is DBNull) ? int.MinValue : (int)Reader["MaLop"];
             obj.TenLop = (Reader["TenLop"] is DBNull) ? string.Empty : (string)Reader["TenLop"];
-            obj.NamBatDau = (Reader["NamBatDau"] is DBNull) ? string.Empty : (string)Reader["NamBatDau"];
+            obj.NamBatDau = (Reader["NamBatDau"] is DBNull) ? DateTime.MinValue : (DateTime)Reader["NamBatDau"];
             obj.MaGiaiDoan = (Reader["MaGiaiDoan"] is DBNull) ? int.MinValue : (int)Reader["MaGiaiDoan"];
             obj.MaHocKy = (Reader["MaHocKy"] is DBNull) ? int.MinValue : (int)Reader["MaHocKy"];
             return obj;

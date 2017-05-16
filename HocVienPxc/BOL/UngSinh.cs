@@ -39,6 +39,7 @@ namespace HocVienPxc.BOL
         string _nhanDinhOnGoi;
         string _sucKhoe;
         string _nhanDinhDiem;
+        string _anhDaiDien;
         public int MaUngSinh
         {
             get { return _maUngSinh; }
@@ -54,7 +55,7 @@ namespace HocVienPxc.BOL
             get { return _hoVaTenLot; }
             set { _hoVaTenLot = value; }
         }
-        public string TenUngSing
+        public string TenUngSinh
         {
             get { return _tenUngSinh; }
             set { _tenUngSinh = value; }
@@ -184,6 +185,11 @@ namespace HocVienPxc.BOL
             get { return _nhanDinhDiem; }
             set { _nhanDinhDiem = value; }
         }
+        public string AnhDaiDien
+        {
+            get { return _anhDaiDien; }
+            set { _anhDaiDien = value; }
+        }
         public static ObservableCollection<UngSinh> HienThiTatCa()
         {
             UngSinhDAL db = new UngSinhDAL();
@@ -209,6 +215,12 @@ namespace HocVienPxc.BOL
             UngSinhDAL db = new UngSinhDAL();
             return db.XoaUngSinh(MaUngSinh);
         }
+        public int CapNhatLichSuOnGoi(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatLichSuOnGoi(obj);
+        }
+
     }
     
 }

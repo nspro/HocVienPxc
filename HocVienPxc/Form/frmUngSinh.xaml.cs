@@ -15,6 +15,7 @@ using System.Collections.ObjectModel;
 using HocVienPxc.BOL;
 using Microsoft.Win32;
 using System.IO;
+using System.Windows.Documents;
 
 namespace HocVienPxc.Form
 {
@@ -29,7 +30,9 @@ namespace HocVienPxc.Form
 
             //load font
             LoadFontAndSize();
-            
+            ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+            HienThiThongTinChiTiet(obj);
+            HienThiLichSuOnGoi(obj);
         }
 
         private void LoadFontAndSize()
@@ -307,5 +310,71 @@ namespace HocVienPxc.Form
 
     
         //END ĐIỂM
+
+
+        public void HienThiThongTinChiTiet(ObservableCollection<UngSinh> obj)
+        {
+            txt_Stick_TenThanh.Text = obj[0].TenThanh;
+            txt_Stick_HoTen.Text = obj[0].HoVaTenLot + " " + obj[0].TenUngSinh;
+            txt_Stick_NgaySinh.Text = obj[0].NgaySinh.ToShortDateString();
+            txt_Stick_GiaoXu.Text = obj[0].GiaoXu;
+            txt_Stick_GiaoPhan.Text = obj[0].GiaoPhan;
+
+            //Show Ten Lop
+            ObservableCollection<Lop> objLop = Lop.HienThiLop(obj[0].MaLop);
+            txt_Stick_Lop.Text = objLop[0].TenLop;
+            //End Show Ten Lop
+
+            //Show Ten TinhTrang
+            ObservableCollection<TinhTrang> objTinhTrang = TinhTrang.HienThiTinhTrang(obj[0].MaTinhTrang);
+            txt_Stick_TinhTrang.Text = objTinhTrang[0].TenTinhTrang;
+            //End Show Ten TinhTrang
+
+            //Show Ten HocKy
+            txt_Stick_HocKy.Text = "Chua sua";
+            //End Show Ten HocKy
+
+            text_TenThanh.Text = obj[0].TenThanh;
+            text_HoVaTenLot.Text = obj[0].HoVaTenLot;
+            text_TenUngSinh.Text = obj[0].TenUngSinh;
+            text_NgaySinh.Text = obj[0].NgaySinh.ToShortDateString();
+            text_NoiSinh.Text = obj[0].NoiSinh;
+            text_NguyenQuan.Text = obj[0].NguyenQuan;
+            text_HoKhauThuongTru.Text = obj[0].HoKhauThuongTru;
+            text_SoCMND.Text = obj[0].SoCMND;
+            text_NgayCapCMND.Text = obj[0].NgayCapCMND.ToShortDateString();
+            text_NoiCapCMND.Text = obj[0].NoiCapCMND;
+            text_NgayRuaToi.Text = obj[0].NgayRuaToi.ToShortDateString();
+            text_GiaoXuRuaToi.Text = obj[0].GiaoXuRuaToi;
+            text_NgayThemSuc.Text = obj[0].NgayThemSuc.ToShortDateString();
+            text_GiaoXuThemSuc.Text = obj[0].GiaoXuThemSuc;
+            text_GiaoXu.Text = obj[0].GiaoXu;
+            text_GiaoPhan.Text = obj[0].GiaoPhan;
+            text_DienThoaiGiaoXu.Text = obj[0].DienThoaiGiaoXu;
+            text_DienThoaiCaNhan.Text = obj[0].DienThoaiCaNhan;
+        }
+        public void HienThiLichSuOnGoi(ObservableCollection<UngSinh> obj)
+        {
+            ObservableCollection<UngSinh> objLichSu = UngSinh.HienThiUngSinh(11);
+            rtb_LichSuOnGoi_Editor.AppendText(obj[0].LichSuOnGoi);
+            
+        }
+
+        private void btn_LichSuOnGoi_Luu_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange tr = new TextRange(rtb_LichSuOnGoi_Editor.Document.ContentStart, rtb_LichSuOnGoi_Editor.Document.ContentEnd);
+            
+            MemoryStream ms = new MemoryStream();
+            tr.Save(ms, DataFormats.Xaml);
+            string LichSuOnGoi = ASCIIEncoding.Default.GetString(ms.ToArray());
+            UngSinh objLichSu = new UngSinh();
+            ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+            objLichSu.MaUngSinh = obj[0].MaUngSinh;
+            objLichSu.LichSuOnGoi = LichSuOnGoi;
+            objLichSu.CapNhatLichSuOnGoi(objLichSu);
+
+            //MessageBox.Show(LichSuOnGoi);
+
+        }
     }
 }

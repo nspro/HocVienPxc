@@ -18,7 +18,7 @@ namespace HocVienPxc.DAL
             obj.MaUngSinh = (Reader["MaUngSinh"] is DBNull) ? int.MinValue : (int)Reader["MaUngSinh"];
             obj.TenThanh = (Reader["TenThanh"] is DBNull) ? string.Empty : (string)Reader["TenThanh"];
             obj.HoVaTenLot = (Reader["HoVaTenLot"] is DBNull) ? string.Empty : (string)Reader["HoVaTenLot"];
-            obj.TenUngSing = (Reader["TenUngSinh"] is DBNull) ? string.Empty : (string)Reader["TenUngSinh"];
+            obj.TenUngSinh = (Reader["TenUngSinh"] is DBNull) ? string.Empty : (string)Reader["TenUngSinh"];
             obj.MaTinhTrang = (Reader["MaTinhTrang"] is DBNull) ? int.MinValue : (int)Reader["MaTinhTrang"];
             obj.MaLop = (Reader["MaLop"] is DBNull) ? int.MinValue : (int)Reader["MaLop"];
             obj.NgaySinh = (Reader["NgaySinh"] is DBNull) ? DateTime.MinValue : (DateTime)Reader["NgaySinh"];
@@ -43,7 +43,7 @@ namespace HocVienPxc.DAL
             obj.NhungDiemCoGangThayDoi = (Reader["NhungDiemCoGangThayDoi"] is DBNull) ? string.Empty : (string)Reader["NhungDiemCoGangThayDoi"];
             obj.NhanDinhOnGoi = (Reader["NhanDinhOnGoi"] is DBNull) ? string.Empty : (string)Reader["NhanDinhOnGoi"];
             obj.NhanDinhDiem = (Reader["NhanDinhDiem"] is DBNull) ? string.Empty : (string)Reader["NhanDinhDiem"];
-
+            obj.AnhDaiDien = (Reader["AnhDaiDien"] is DBNull) ? string.Empty : (string)Reader["AnhDaiDien"];
             return obj;
         }
         public int ThemTaiKhoan(UngSinh obj)
@@ -54,7 +54,7 @@ namespace HocVienPxc.DAL
                 {
 
                     conn.Open();
-                    string q = "Insert into UngSinh values (N'" + obj.TenThanh + "',N'" + obj.HoVaTenLot + "',N'" + obj.TenUngSing + "',N'" + obj.MaTinhTrang + "',N'" + obj.MaLop + "',N'" + obj.NgaySinh + "',N'" + obj.NoiSinh + "',N'" + obj.NguyenQuan + "',N'" + obj.HoKhauThuongTru + "',N'" + obj.SoCMND + "',N'" + obj.NgayCapCMND + "',N'" + obj.NoiCapCMND + "',N'" + obj.NgayRuaToi + "',N'" + obj.GiaoXuRuaToi + "',N'" + obj.NgayThemSuc + "',N'" + obj.GiaoXuThemSuc + "',N'" + obj.GiaoXu + "',N'" + obj.GiaoPhan + "',N'" + obj.DienThoaiGiaoXu + "',N'" + obj.DienThoaiCaNhan + "',N'" + obj.CaTinh + "',N'" + obj.LichSuOnGoi + "',N'" + obj.YThucDoiTu + "',N'" + obj.HocTapNangKhieu + "',N'" + obj.NhungDiemCoGangThayDoi + "',N'" + obj.NhanDinhOnGoi + "',N'" + obj.SucKhoe + "',N'" + obj.NhanDinhDiem + "') ";
+                    string q = "Insert into UngSinh values (N'" + obj.TenThanh + "',N'" + obj.HoVaTenLot + "',N'" + obj.TenUngSinh + "',N'" + obj.MaTinhTrang + "',N'" + obj.MaLop + "',N'" + obj.NgaySinh + "',N'" + obj.NoiSinh + "',N'" + obj.NguyenQuan + "',N'" + obj.HoKhauThuongTru + "',N'" + obj.SoCMND + "',N'" + obj.NgayCapCMND + "',N'" + obj.NoiCapCMND + "',N'" + obj.NgayRuaToi + "',N'" + obj.GiaoXuRuaToi + "',N'" + obj.NgayThemSuc + "',N'" + obj.GiaoXuThemSuc + "',N'" + obj.GiaoXu + "',N'" + obj.GiaoPhan + "',N'" + obj.DienThoaiGiaoXu + "',N'" + obj.DienThoaiCaNhan + "',N'" + obj.CaTinh + "',N'" + obj.LichSuOnGoi + "',N'" + obj.YThucDoiTu + "',N'" + obj.HocTapNangKhieu + "',N'" + obj.NhungDiemCoGangThayDoi + "',N'" + obj.NhanDinhOnGoi + "',N'" + obj.SucKhoe + "',N'" + obj.NhanDinhDiem + "', N'" + obj.AnhDaiDien + "') ";
                     SqlCommand myCommand = new SqlCommand(q, conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
@@ -75,7 +75,7 @@ namespace HocVienPxc.DAL
                 {
 
                     conn.Open();
-                    string q = "Update UngSinh set TenThanh = N'" + obj.TenThanh + "', HoVaTenLot = N'" + obj.HoVaTenLot + "',TenUngSing = N'" + obj.TenUngSing + "',MaTinhTrang =N'" + obj.MaTinhTrang + "',MaLop = N'" + obj.MaLop + "',NgaySinh=N'" + obj.NgaySinh + "',NoiSinh=N'" + obj.NoiSinh + "',NguyenQuan=N'" + obj.NguyenQuan + "',HoKhauThuongTru=N'" + obj.HoKhauThuongTru + "',SoCMND=N'" + obj.SoCMND + "',NgayCapCMND=N'" + obj.NgayCapCMND + "',NoiCapCMND=N'" + obj.NoiCapCMND + "',NgayRuaToi=N'" + obj.NgayRuaToi + "',GiaoXuRuaToi=N'" + obj.GiaoXuRuaToi + "',NgayThemSuc=N'" + obj.NgayThemSuc + "',GiaoXuThemSuc=N'" + obj.GiaoXuThemSuc + "',GiaoXu=N'" + obj.GiaoXu + "',GiaoPhan=N'" + obj.GiaoPhan + "',DienThoaiGiaoXu=N'" + obj.DienThoaiGiaoXu + "',DienThoaiCaNhan=N'" + obj.DienThoaiCaNhan + "',CaTinh=N'" + obj.CaTinh + "',LichSuOnGoi=N'" + obj.LichSuOnGoi + "',YThucDoiTu=N'" + obj.YThucDoiTu + "',HocTapNangKhieu=N'" + obj.HocTapNangKhieu + "',NhungDiemCoGangThayDoi=N'" + obj.NhungDiemCoGangThayDoi + "',NhanDinhOnGoi=N'" + obj.NhanDinhOnGoi + "',SucKhoe=N'" + obj.SucKhoe + "',NhanDinhDiem=N'" + obj.NhanDinhDiem + "' where MaUngSinh = '"+obj.MaUngSinh+"' ";
+                    string q = "Update UngSinh set TenThanh = N'" + obj.TenThanh + "', HoVaTenLot = N'" + obj.HoVaTenLot + "',TenUngSinh = N'" + obj.TenUngSinh + "',MaTinhTrang =N'" + obj.MaTinhTrang + "',MaLop = N'" + obj.MaLop + "',NgaySinh=N'" + obj.NgaySinh + "',NoiSinh=N'" + obj.NoiSinh + "',NguyenQuan=N'" + obj.NguyenQuan + "',HoKhauThuongTru=N'" + obj.HoKhauThuongTru + "',SoCMND=N'" + obj.SoCMND + "',NgayCapCMND=N'" + obj.NgayCapCMND + "',NoiCapCMND=N'" + obj.NoiCapCMND + "',NgayRuaToi=N'" + obj.NgayRuaToi + "',GiaoXuRuaToi=N'" + obj.GiaoXuRuaToi + "',NgayThemSuc=N'" + obj.NgayThemSuc + "',GiaoXuThemSuc=N'" + obj.GiaoXuThemSuc + "',GiaoXu=N'" + obj.GiaoXu + "',GiaoPhan=N'" + obj.GiaoPhan + "',DienThoaiGiaoXu=N'" + obj.DienThoaiGiaoXu + "',DienThoaiCaNhan=N'" + obj.DienThoaiCaNhan + "',CaTinh=N'" + obj.CaTinh + "',LichSuOnGoi=N'" + obj.LichSuOnGoi + "',YThucDoiTu=N'" + obj.YThucDoiTu + "',HocTapNangKhieu=N'" + obj.HocTapNangKhieu + "',NhungDiemCoGangThayDoi=N'" + obj.NhungDiemCoGangThayDoi + "',NhanDinhOnGoi=N'" + obj.NhanDinhOnGoi + "',SucKhoe=N'" + obj.SucKhoe + "',NhanDinhDiem=N'" + obj.NhanDinhDiem + "', AnhDaiDien = '"+obj.AnhDaiDien+"' where MaUngSinh = '"+obj.MaUngSinh+"' ";
                     SqlCommand myCommand = new SqlCommand(q, conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
@@ -88,6 +88,7 @@ namespace HocVienPxc.DAL
                 return 0;
             }
         }
+
         public int XoaUngSinh(int MaUngSinh)
         {
             try
@@ -147,6 +148,28 @@ namespace HocVienPxc.DAL
                 }
                 conn.Close();
                 return lst;
+            }
+        }
+
+        public int CapNhatLichSuOnGoi(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set LichSuOnGoi=N'" + obj.LichSuOnGoi + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
             }
         }
     }

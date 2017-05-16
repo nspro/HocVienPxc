@@ -42,7 +42,7 @@ namespace HocVienPxc.BOL
             HocKyDAL db = new HocKyDAL();
             return db.HienThiTatCa();
         }
-        public static ObservableCollection<HocKy> HienThiLop(int MaHocKy)
+        public static ObservableCollection<HocKy> HienThiHocKy(int MaHocKy)
         {
             HocKyDAL db = new HocKyDAL();
             return db.HienThiHocKy(MaHocKy);
