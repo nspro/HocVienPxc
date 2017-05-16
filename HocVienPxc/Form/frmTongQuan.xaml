@@ -5,20 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HocVienPxc.Form"
         mc:Ignorable="d" Height="550" Width="1024" Icon="/HocVienPxc;component/Asset/Graphic/Icon/img_icon_student.png" ResizeMode="NoResize" Title="Trang tổng quan">
-    <Window.Resources>
-        <SolidColorBrush x:Key="color_Personal_Backgroud" Color="Gainsboro"/>
-        <DropShadowBitmapEffect x:Key="Style_Object_Drop_Shadow1" Color="Black" Direction="300" ShadowDepth="2" Softness="0.15" Opacity="0.3"/>
-        <DropShadowBitmapEffect x:Key="Style_Object_Drop_Shadow2" Color="Black" Direction="250" Softness="0.3" Opacity="0.3" ShadowDepth="1"/>
-        <Style x:Key="Triggers" TargetType="TextBox">
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="true">
-                    <Setter Property = "BorderBrush" Value="{Binding Color_Border_MouseOver}"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+        
+        <Window.Resources>
+        <ResourceDictionary Source="/HocVienPxc;component/AppTabControl.xaml">
+            <ResourceDictionary.MergedDictionaries>
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
+
     <Grid Background="#F9F9F9F9" Margin="0">
-        <StackPanel HorizontalAlignment="Left" Width="200" Margin="10,10,0,10" Background="#FF333333" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
+        <!--<StackPanel HorizontalAlignment="Left" Width="200" Margin="10,10,0,10" Background="#FF333333">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
                 <Grid>
                     <Ellipse Width="50" Height="50" Margin="30,10,10,10">
@@ -46,8 +43,31 @@
                     <Label Content="Đăng xuất" Foreground="#FFFF461C" Height="27.5" VerticalAlignment="Center" Width="140" FontSize="14" Margin="0,0,0,2.5"></Label>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
-        <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" Margin="215,10,10,10" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
+        </StackPanel>-->
+        <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" Margin="10">
+
+            <TabControl x:Name="tabControl" TabStripPlacement="Left" Template="{StaticResource MenuTabControl}">
+                
+                <TabItem Header="Cấu hình">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="Danh sách ứng sinh">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+            <Canvas HorizontalAlignment="Left" Height="75" VerticalAlignment="Bottom" Width="200">
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                    <Grid>
+                        <Ellipse Width="50" Height="50" Margin="30,10,10,10">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/HocVienPxc;component/Asset/Graphic/Icon/img_avatar.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                    <Label x:Name="lb_Stick_Hello" Content="Xin chào, &#xD;&#xA;Admin." Height="42" Width="100" Foreground="White"/>
+                </StackPanel>
+            </Canvas>
         </Grid>
     </Grid>
 </Window>
