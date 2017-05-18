@@ -45,21 +45,31 @@
             </StackPanel>
         </StackPanel>-->
         <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" Margin="10">
-
             <TabControl x:Name="tabControl" TabStripPlacement="Left" Template="{StaticResource MenuTabControl}">
-                
-                <TabItem Header="Cấu hình">
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="40" Source="/HocVienPxc;component/Asset/Graphic/MenuIcon/img_icon_menu_config.png" HorizontalAlignment="Left"/>
+                            <Label x:Name="lb_Menu_CauHinh" Content="Cấu hình" Width="140" FontSize="17" Foreground="White" Margin="0" Padding="5,8,5,5"/>
+                        </StackPanel>
+                    </TabItem.Header>
                     <Grid Background="#FFE5E5E5"/>
                 </TabItem>
-                <TabItem Header="Danh sách ứng sinh">
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="40" Source="/HocVienPxc;component/Asset/Graphic/MenuIcon/img_icon_menu_list_student.png" HorizontalAlignment="Left"/>
+                            <Label x:Name="lb_Menu_DanhSachUngSinh" Content="Danh sách ứng sinh" Width="170" FontSize="17" Foreground="White" Margin="0" Padding="10,8,5,5"/>
+                        </StackPanel>
+                    </TabItem.Header>
                     <Grid Background="#FFE5E5E5"/>
                 </TabItem>
             </TabControl>
-            <Canvas HorizontalAlignment="Left" Height="75" VerticalAlignment="Bottom" Width="200">
-
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+            <Canvas HorizontalAlignment="Left" Height="75" VerticalAlignment="Bottom" Width="230">
+                <Path Data="M10,58 L210.0025,58" Height="1" Margin="0" Stretch="Fill" VerticalAlignment="Top" Width="230" Stroke="#FF686868" Fill="Black"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Width="230">
                     <Grid>
-                        <Ellipse Width="50" Height="50" Margin="30,10,10,10">
+                        <Ellipse Width="50" Height="50" Margin="50,10,10,10">
                             <Ellipse.Fill>
                                 <ImageBrush ImageSource="/HocVienPxc;component/Asset/Graphic/Icon/img_avatar.jpg" Stretch="UniformToFill"/>
                             </Ellipse.Fill>
