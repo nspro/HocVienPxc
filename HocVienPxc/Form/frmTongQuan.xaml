@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HocVienPxc.Form"
         mc:Ignorable="d" Height="550" Width="1024" Icon="/HocVienPxc;component/Asset/Graphic/Icon/img_icon_student.png" ResizeMode="NoResize" Title="Trang tổng quan">
-        
-        <Window.Resources>
+
+    <Window.Resources>
         <ResourceDictionary Source="/HocVienPxc;component/AppTabControl.xaml">
             <ResourceDictionary.MergedDictionaries>
-                
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
     <Grid Background="#F9F9F9F9" Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <!--<StackPanel HorizontalAlignment="Left" Width="200" Margin="10,10,0,10" Background="#FF333333">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
                 <Grid>
@@ -46,14 +49,33 @@
         </StackPanel>-->
         <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" Margin="10">
             <TabControl x:Name="tabControl" TabStripPlacement="Left" Template="{StaticResource MenuTabControl}">
-                <TabItem>
+                <TabItem BorderThickness="0" Margin="0,150,0,0">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Width="40" Source="/HocVienPxc;component/Asset/Graphic/MenuIcon/img_icon_menu_config.png" HorizontalAlignment="Left"/>
                             <Label x:Name="lb_Menu_CauHinh" Content="Cấu hình" Width="140" FontSize="17" Foreground="White" Margin="0" Padding="5,8,5,5"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="41.5" VerticalAlignment="Top" Margin="0,30,0,0">
+                                <Label x:Name="lb_MayChu" Content="Máy chủ" Height="32" Width="120" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5" Margin="20,5,0,5"/>
+                                <TextBox x:Name="text_MayChu" Height="35" TextWrapping="Wrap" Text="http://192.168.100.101" Width="570" Background="#FFF0F0F0" BorderBrush="{DynamicResource Color_control_border_ACACAC}" FontFamily="Helvetica Neue" FontSize="14" Padding="10,8,0,0" Margin="10,4,0,3" TabIndex="1" MaxLines="1"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="42" Margin="0" VerticalAlignment="Top">
+                                <Label x:Name="lb_CongMayChu" Content="Cổng" Height="32" Width="120" HorizontalAlignment="Left" FontFamily="Helvetica Neue" FontWeight="SemiBold" FontSize="14" Padding="10,8,5,5" Margin="20,5,0,5"/>
+                                <TextBox x:Name="text_CongMayChu" Height="35" TextWrapping="Wrap" Text="8080" Width="570" Background="#FFF0F0F0" BorderBrush="{DynamicResource Color_control_border_ACACAC}" FontFamily="Helvetica Neue" FontSize="14" Padding="10,8,0,0" Margin="10,4,0,3" TabIndex="1" MaxLines="1"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Height="30" VerticalAlignment="Bottom">
+                            <Button x:Name="btn_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0,0,39.6,0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                                <Button.Background>
+                                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+
+                    </Grid>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
@@ -65,8 +87,7 @@
                     <Grid Background="#FFE5E5E5"/>
                 </TabItem>
             </TabControl>
-            <Canvas HorizontalAlignment="Left" Height="75" VerticalAlignment="Bottom" Width="230">
-                <Path Data="M10,58 L210.0025,58" Height="1" Margin="0" Stretch="Fill" VerticalAlignment="Top" Width="230" Stroke="#FF686868" Fill="Black"/>
+            <Canvas HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="230" Margin="0,10,0,0">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Width="230">
                     <Grid>
                         <Ellipse Width="50" Height="50" Margin="50,10,10,10">
@@ -75,8 +96,9 @@
                             </Ellipse.Fill>
                         </Ellipse>
                     </Grid>
-                    <Label x:Name="lb_Stick_Hello" Content="Xin chào, &#xD;&#xA;Admin." Height="42" Width="100" Foreground="White"/>
+                    <Label x:Name="lb_Stick_Hello" Content="Xin chào, &#xA;Admin." Height="42" Width="100" Foreground="White"/>
                 </StackPanel>
+                <Path Data="M10,58 L210.0025,58" Height="1" Margin="0" Stretch="Fill" VerticalAlignment="Top" Width="230" Stroke="#FF686868" Fill="Black" Canvas.Top="75"/>
             </Canvas>
         </Grid>
     </Grid>

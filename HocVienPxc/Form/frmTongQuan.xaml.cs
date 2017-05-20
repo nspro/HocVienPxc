@@ -25,6 +25,7 @@ namespace HocVienPxc.Form
         }
 
 
+
         ////Cấu hình
         //private void stp_Menu_CauHinh_MouseMove(object sender, MouseEventArgs e)
         //{
@@ -39,7 +40,7 @@ namespace HocVienPxc.Form
         //private void stp_Menu_CauHinh_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         //{
         //    stp_Menu_CauHinh.Background = Brushes.DarkSlateGray;
-            
+
         //}
 
         //private void stp_Menu_CauHinh_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

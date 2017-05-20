@@ -79,10 +79,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Form\uctrlTongQuan_CauHinh.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -127,9 +123,6 @@
     <Compile Include="Form\frmUngSinh.xaml.cs">
       <DependentUpon>frmUngSinh.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Form\uctrlTongQuan_CauHinh.xaml.cs">
-      <DependentUpon>uctrlTongQuan_CauHinh.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Func\func_ChuyenDoiTrangThaiObject.cs" />
     <Compile Include="Func\func_DoiMau.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -155,6 +148,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Form\StaticData.DAT" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
