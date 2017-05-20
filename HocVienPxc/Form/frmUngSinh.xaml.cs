@@ -15,7 +15,6 @@ using System.Collections.ObjectModel;
 using HocVienPxc.BOL;
 using Microsoft.Win32;
 using System.IO;
-using System.Windows.Documents;
 using System.Xml;
 using System.Windows.Markup;
 
@@ -254,7 +253,16 @@ namespace HocVienPxc.Form
 
         private void cmb_NhanDinhOnGoi_TextChanged(object sender, RoutedEventArgs e)
         {
-            rtb_NhanDinhOnGoi_Editor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmb_NhanDinhOnGoi_FontSize.Text);
+            try
+            {
+                rtb_NhanDinhOnGoi_Editor.Selection.ApplyPropertyValue(TextElement.FontSizeProperty, cmb_NhanDinhOnGoi_FontSize.Text);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             btn_NhanDinhOnGoi_Luu.IsEnabled = true;
         }
         //END NHẬN ĐỊNH ƠN GỌI

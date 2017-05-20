@@ -13,8 +13,8 @@ namespace HocVienPxc.DAL
         public SqlConnection getConnect()
         {
             // su dung server tren may son 
-            return new SqlConnection(@"Data Source=DESKTOP-GUS3GC7\SQLEXPRESS;Initial Catalog=AspirantHouseSoft;Integrated Security=True;");
-            //return new SqlConnection(@"Data Source=Data Source=192.168.1.29;Initial Catalog=AspirantHouseSoft;Persist Security Info=True;User ID=sa; Password=bonaventura");
+            return new SqlConnection(@"Data Source=ASPH-DEV1;Initial Catalog=AspirantHouseSoft;Integrated Security=True");
+            //return new SqlConnection(@"Data Source=Data Source=192.168.1.28;Initial Catalog=AspirantHouseSoft;Persist Security Info=True;User ID=sa; Password=bonaventura");
         }
         public DataTable GetDataTable(string sql)
         {

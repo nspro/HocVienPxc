@@ -72,24 +72,24 @@ namespace HocVienPxc.Form
         //}
 
         ////Đăng xuất
-        //private void stp_Menu_DangXuat_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    stp_Menu_DangXuat.Background = Brushes.DimGray;
-        //}
+        private void stp_Menu_DangXuat_MouseMove(object sender, MouseEventArgs e)
+        {
+            stp_Menu_DangXuat.Background = Brushes.DimGray;
+        }
 
-        //private void stp_Menu_DangXuat_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    stp_Menu_DangXuat.Background = Brushes.DarkSlateGray;
-        //}
+        private void stp_Menu_DangXuat_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            stp_Menu_DangXuat.Background = Brushes.DarkSlateGray;
+        }
 
-        //private void stp_Menu_DangXuat_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        //{
-        //    stp_Menu_DangXuat.Background = Brushes.Transparent;
-        //}
+        private void stp_Menu_DangXuat_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            stp_Menu_DangXuat.Background = Brushes.Transparent;
+        }
 
-        //private void stp_Menu_DangXuat_MouseLeave(object sender, MouseEventArgs e)
-        //{
-        //    stp_Menu_DangXuat.Background = Brushes.Transparent;
-        //}
+        private void stp_Menu_DangXuat_MouseLeave(object sender, MouseEventArgs e)
+        {
+            stp_Menu_DangXuat.Background = Brushes.Transparent;
+        }
     }
 }

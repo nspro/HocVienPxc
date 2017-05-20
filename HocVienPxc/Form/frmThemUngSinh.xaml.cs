@@ -73,9 +73,9 @@ namespace HocVienPxc.Form
 
         private void HienThiGiaiDoan()
         {
-            ObservableCollection<GiaiDoan> objGiaiDoan = GiaiDoan.HienThiTatCa();
-            cmb_GiaiDoan.ItemsSource = objGiaiDoan;
-            cmb_GiaiDoan.SelectedValue = GiaiDoan;
+            //ObservableCollection<GiaiDoan> objGiaiDoan = GiaiDoan.HienThiTatCa();
+            //cmb_GiaiDoan.ItemsSource = objGiaiDoan;
+            //cmb_GiaiDoan.SelectedValue = GiaiDoan;
         }
         private void cmb_GiaiDoan_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
