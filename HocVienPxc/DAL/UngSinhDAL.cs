@@ -172,5 +172,173 @@ namespace HocVienPxc.DAL
                 return 0;
             }
         }
+        public int CapNhatCaTinh(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set CaTinh=N'" + obj.CaTinh + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int CapNhatYThucDoiTu(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set YThucDoiTu=N'" + obj.YThucDoiTu + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int CapNhatHocTapNangKhieu(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set HocTapNangKhieu=N'" + obj.HocTapNangKhieu + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int CapNhatNhungDiemCoGangThayDoi(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set NhungDiemCoGangThayDoi=N'" + obj.NhungDiemCoGangThayDoi + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int CapNhatNhanDinhOnGoi(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set NhanDinhOnGoi=N'" + obj.NhanDinhOnGoi + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int CapNhatSucKhoe(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set SucKhoe=N'" + obj.SucKhoe + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int CapNhatNhanDinhDiem(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set NhanDinhDiem=N'" + obj.NhanDinhDiem + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int CapNhatAnhDaiDien(UngSinh obj)
+        {
+            try
+            {
+                using (SqlConnection conn = getConnect())
+                {
+
+                    conn.Open();
+                    string q = "Update UngSinh set AnhDaiDien=N'" + obj.AnhDaiDien + "' where MaUngSinh = '" + obj.MaUngSinh + "' ";
+                    SqlCommand myCommand = new SqlCommand(q, conn);
+                    myCommand.CommandType = CommandType.Text;
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

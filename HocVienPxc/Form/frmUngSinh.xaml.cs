@@ -16,6 +16,8 @@ using HocVienPxc.BOL;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows.Documents;
+using System.Xml;
+using System.Windows.Markup;
 
 namespace HocVienPxc.Form
 {
@@ -33,6 +35,13 @@ namespace HocVienPxc.Form
             ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
             HienThiThongTinChiTiet(obj);
             HienThiLichSuOnGoi(obj);
+            HienThiCaTinh(obj);
+            HienThiYThucDoiTu(obj);
+            HienThiHocTapNangKhieu(obj);
+            HienThiNhungDiemCoGangThayDoi(obj);
+            HienThiNhanDinhOnGoi(obj);
+            HienThiSucKhoe(obj);
+            HienThiNhanDinhDiem(obj);
         }
 
         private void LoadFontAndSize()
@@ -353,28 +362,224 @@ namespace HocVienPxc.Form
             text_DienThoaiGiaoXu.Text = obj[0].DienThoaiGiaoXu;
             text_DienThoaiCaNhan.Text = obj[0].DienThoaiCaNhan;
         }
+
+        private static string GetRTF(RichTextBox rt)
+        {
+            TextRange range = new TextRange(rt.Document.ContentStart, rt.Document.ContentEnd);
+            MemoryStream stream = new MemoryStream();
+            range.Save(stream, DataFormats.Xaml);
+            string xamlText = Encoding.UTF8.GetString(stream.ToArray());
+            return xamlText;
+        }
+
+        private static FlowDocument SetRTF(string xamlString)
+        {
+            if (xamlString != "")
+            {
+                StringReader stringReader = new StringReader(xamlString);
+                XmlReader xmlReader = XmlReader.Create(stringReader);
+                Section sec = XamlReader.Load(xmlReader) as Section;
+                FlowDocument doc = new FlowDocument();
+                while (sec.Blocks.Count > 0)
+                    doc.Blocks.Add(sec.Blocks.FirstBlock);
+                return doc;
+            }
+            else { return null; }
+        }
+
         public void HienThiLichSuOnGoi(ObservableCollection<UngSinh> obj)
         {
             ObservableCollection<UngSinh> objLichSu = UngSinh.HienThiUngSinh(11);
-            rtb_LichSuOnGoi_Editor.AppendText(obj[0].LichSuOnGoi);
-            
+            try { rtb_LichSuOnGoi_Editor.Document = SetRTF(obj[0].LichSuOnGoi); }
+            catch { }
+                     
         }
 
         private void btn_LichSuOnGoi_Luu_Click(object sender, RoutedEventArgs e)
         {
-            TextRange tr = new TextRange(rtb_LichSuOnGoi_Editor.Document.ContentStart, rtb_LichSuOnGoi_Editor.Document.ContentEnd);
+            try
+            {
+                string LichSuOnGoi = GetRTF(rtb_LichSuOnGoi_Editor);
+                UngSinh objLichSu = new UngSinh();
+                ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+                objLichSu.MaUngSinh = obj[0].MaUngSinh;
+                objLichSu.LichSuOnGoi = LichSuOnGoi;
+                objLichSu.CapNhatLichSuOnGoi(objLichSu);
+                MessageBox.Show("Đã cập nhật dữ liệu.");
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật không thành công.");
+            }
             
-            MemoryStream ms = new MemoryStream();
-            tr.Save(ms, DataFormats.Xaml);
-            string LichSuOnGoi = ASCIIEncoding.Default.GetString(ms.ToArray());
-            UngSinh objLichSu = new UngSinh();
-            ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
-            objLichSu.MaUngSinh = obj[0].MaUngSinh;
-            objLichSu.LichSuOnGoi = LichSuOnGoi;
-            objLichSu.CapNhatLichSuOnGoi(objLichSu);
+        }
 
-            //MessageBox.Show(LichSuOnGoi);
+        public void HienThiCaTinh(ObservableCollection<UngSinh> obj)
+        {
+            ObservableCollection<UngSinh> objCaTinh = UngSinh.HienThiUngSinh(11);
+            try { rtb_CaTinh_Editor.Document = SetRTF(obj[0].CaTinh); }
+            catch { }
+        }
+        private void btn_CaTinh_Luu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string CaTinh = GetRTF(rtb_CaTinh_Editor);
+                UngSinh objCaTinh = new UngSinh();
+                ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+                objCaTinh.MaUngSinh = obj[0].MaUngSinh;
+                objCaTinh.CaTinh = CaTinh;
+                objCaTinh.CapNhatCaTinh(objCaTinh);
+                MessageBox.Show("Đã cập nhật dữ liệu.");
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật không thành công.");
+            }
+        }
+        public void HienThiYThucDoiTu(ObservableCollection<UngSinh> obj)
+        {
+            ObservableCollection<UngSinh> objYThucDoiTu = UngSinh.HienThiUngSinh(11);
+            try { rtb_YThucDoiTu_Editor.Document = SetRTF(obj[0].YThucDoiTu); }
+            catch { }
+        }
 
+        private void btn_YThucDoiTu_Luu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string YThucDoiTu = GetRTF(rtb_YThucDoiTu_Editor);
+                UngSinh objYThucDoiTu = new UngSinh();
+                ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+                objYThucDoiTu.MaUngSinh = obj[0].MaUngSinh;
+                objYThucDoiTu.YThucDoiTu = YThucDoiTu;
+                objYThucDoiTu.CapNhatYThucDoiTu(objYThucDoiTu);
+                MessageBox.Show("Đã cập nhật dữ liệu.");
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật không thành công.");
+            }
+        }
+        public void HienThiHocTapNangKhieu(ObservableCollection<UngSinh> obj)
+        {
+            ObservableCollection<UngSinh> objHocTapNangKhieu = UngSinh.HienThiUngSinh(11);
+            try { rtb_HocTapNangKhieu_Editor.Document = SetRTF(obj[0].HocTapNangKhieu); }
+            catch { }
+        }
+
+        private void btn_HocTapNangKhieu_Luu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string HocTapNangKhieu = GetRTF(rtb_HocTapNangKhieu_Editor);
+                UngSinh objHocTapNangKhieu = new UngSinh();
+                ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+                objHocTapNangKhieu.MaUngSinh = obj[0].MaUngSinh;
+                objHocTapNangKhieu.HocTapNangKhieu = HocTapNangKhieu;
+                objHocTapNangKhieu.CapNhatHocTapNangKhieu(objHocTapNangKhieu);
+                MessageBox.Show("Đã cập nhật dữ liệu.");
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật không thành công.");
+            }
+        }
+        public void HienThiNhungDiemCoGangThayDoi(ObservableCollection<UngSinh> obj)
+        {
+            ObservableCollection<UngSinh> objNhungDiemCoGangThayDoi = UngSinh.HienThiUngSinh(11);
+            try { rtb_CanThayDoi_Editor.Document = SetRTF(obj[0].NhungDiemCoGangThayDoi); }
+            catch { }
+        }
+
+        private void btn_CanThayDoi_Luu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string NhungDiemCoGangThayDoi = GetRTF(rtb_CanThayDoi_Editor);
+                UngSinh objNhungDiemCoGangThayDoi = new UngSinh();
+                ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+                objNhungDiemCoGangThayDoi.MaUngSinh = obj[0].MaUngSinh;
+                objNhungDiemCoGangThayDoi.NhungDiemCoGangThayDoi = NhungDiemCoGangThayDoi;
+                objNhungDiemCoGangThayDoi.CapNhatNhungDiemCoGangThayDoi(objNhungDiemCoGangThayDoi);
+                MessageBox.Show("Đã cập nhật dữ liệu.");
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật không thành công.");
+            }
+        }
+        public void HienThiNhanDinhOnGoi(ObservableCollection<UngSinh> obj)
+        {
+            ObservableCollection<UngSinh> objNhanDinhOnGoi = UngSinh.HienThiUngSinh(11);
+            try { rtb_NhanDinhOnGoi_Editor.Document = SetRTF(obj[0].NhanDinhOnGoi); }
+            catch { }
+        }
+
+        private void btn_NhanDinhOnGoi_Luu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string NhanDinhOnGoi = GetRTF(rtb_NhanDinhOnGoi_Editor);
+                UngSinh objNhanDinhOnGoi = new UngSinh();
+                ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+                objNhanDinhOnGoi.MaUngSinh = obj[0].MaUngSinh;
+                objNhanDinhOnGoi.NhanDinhOnGoi = NhanDinhOnGoi;
+                objNhanDinhOnGoi.CapNhatNhanDinhOnGoi(objNhanDinhOnGoi);
+                MessageBox.Show("Đã cập nhật dữ liệu.");
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật không thành công.");
+            }
+        }
+        public void HienThiSucKhoe(ObservableCollection<UngSinh> obj)
+        {
+            ObservableCollection<UngSinh> objSucKhoe = UngSinh.HienThiUngSinh(11);
+            try { rtb_SucKhoe_Editor.Document = SetRTF(obj[0].SucKhoe); }
+            catch { }
+        }
+
+        private void btn_SucKhoe_Luu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string SucKhoe = GetRTF(rtb_SucKhoe_Editor);
+                UngSinh objSucKhoe = new UngSinh();
+                ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+                objSucKhoe.MaUngSinh = obj[0].MaUngSinh;
+                objSucKhoe.SucKhoe = SucKhoe;
+                objSucKhoe.CapNhatSucKhoe(objSucKhoe);
+                MessageBox.Show("Đã cập nhật dữ liệu.");
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật không thành công.");
+            }
+        }
+        public void HienThiNhanDinhDiem(ObservableCollection<UngSinh> obj)
+        {
+            ObservableCollection<UngSinh> objNhanDinhDiem = UngSinh.HienThiUngSinh(11);
+            try { rtb_NhanDinhDiem_Editor.Document = SetRTF(obj[0].NhanDinhDiem); }
+            catch { }
+        }
+
+        private void btn_NhanDinhDiem_Luu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string NhanDinhDiem = GetRTF(rtb_NhanDinhDiem_Editor);
+                UngSinh objNhanDinhDiem = new UngSinh();
+                ObservableCollection<UngSinh> obj = UngSinh.HienThiUngSinh(11);
+                objNhanDinhDiem.MaUngSinh = obj[0].MaUngSinh;
+                objNhanDinhDiem.NhanDinhDiem = NhanDinhDiem;
+                objNhanDinhDiem.CapNhatNhanDinhDiem(objNhanDinhDiem);
+                MessageBox.Show("Đã cập nhật dữ liệu.");
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật không thành công.");
+            }
         }
     }
 }

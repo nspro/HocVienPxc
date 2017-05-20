@@ -306,7 +306,7 @@
                         </DockPanel>
                     </StackPanel>
                     <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
-                        <Button x:Name="btn_CaTinh_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                        <Button x:Name="btn_CaTinh_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False" Click="btn_CaTinh_Luu_Click">
                             <Button.Background>
                                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                             </Button.Background>
@@ -355,7 +355,7 @@
                         </DockPanel>
                     </StackPanel>
                     <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
-                        <Button x:Name="btn_YThucDoiTu_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                        <Button x:Name="btn_YThucDoiTu_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False" Click="btn_YThucDoiTu_Luu_Click">
                             <Button.Background>
                                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                             </Button.Background>
@@ -403,7 +403,7 @@
                         </DockPanel>
                     </StackPanel>
                     <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
-                        <Button x:Name="btn_HocTapNangKhieu_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                        <Button x:Name="btn_HocTapNangKhieu_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False" Click="btn_HocTapNangKhieu_Luu_Click">
                             <Button.Background>
                                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                             </Button.Background>
@@ -451,7 +451,7 @@
                         </DockPanel>
                     </StackPanel>
                     <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
-                        <Button x:Name="btn_CanThayDoi_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                        <Button x:Name="btn_CanThayDoi_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False" Click="btn_CanThayDoi_Luu_Click">
                             <Button.Background>
                                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                             </Button.Background>
@@ -499,7 +499,7 @@
                         </DockPanel>
                     </StackPanel>
                     <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
-                        <Button x:Name="btn_NhanDinhOnGoi_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                        <Button x:Name="btn_NhanDinhOnGoi_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False" Click="btn_NhanDinhOnGoi_Luu_Click">
                             <Button.Background>
                                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                             </Button.Background>
@@ -547,7 +547,7 @@
                         </DockPanel>
                     </StackPanel>
                     <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
-                        <Button x:Name="btn_SucKhoe_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                        <Button x:Name="btn_SucKhoe_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False" Click="btn_SucKhoe_Luu_Click">
                             <Button.Background>
                                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                             </Button.Background>
@@ -595,7 +595,7 @@
                         </DockPanel>
                     </StackPanel>
                     <StackPanel Height="30" VerticalAlignment="Bottom" Margin="10,5,10,0">
-                        <Button x:Name="btn_NhanDinhDiem_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False">
+                        <Button x:Name="btn_NhanDinhDiem_Luu" Content="Lưu" HorizontalAlignment="Right" Height="25" Margin="0" Width="50" BorderBrush="#FFC7C7C7" VerticalAlignment="Center" IsEnabled="False" Click="btn_NhanDinhDiem_Luu_Click">
                             <Button.Background>
                                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                             </Button.Background>

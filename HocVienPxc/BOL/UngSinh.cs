@@ -220,7 +220,46 @@ namespace HocVienPxc.BOL
             UngSinhDAL db = new UngSinhDAL();
             return db.CapNhatLichSuOnGoi(obj);
         }
-
+        public int CapNhatCaTinh(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatCaTinh(obj);
+        }
+        public int CapNhatYThucDoiTu(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatYThucDoiTu(obj);
+        }
+        public int CapNhatHocTapNangKhieu(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatHocTapNangKhieu(obj);
+        }
+        public int CapNhatNhungDiemCoGangThayDoi(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatNhungDiemCoGangThayDoi(obj);
+        }
+        public int CapNhatNhanDinhOnGoi(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatNhanDinhOnGoi(obj);
+        }
+        public int CapNhatSucKhoe(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatSucKhoe(obj);
+        }
+        public int CapNhatNhanDinhDiem(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatNhanDinhDiem(obj);
+        }
+        public int CapNhatAnhDaiDien(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.CapNhatAnhDaiDien(obj);
+        }
     }
     
 }

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using HocVienPxc.BOL;
 
 namespace HocVienPxc.Form
 {
@@ -23,6 +25,7 @@ namespace HocVienPxc.Form
         {
             InitializeComponent();
             LoadFirstState();
+            HienThiGiaiDoan();
         }
 
         private void LoadFirstState()
@@ -66,6 +69,17 @@ namespace HocVienPxc.Form
         private void img_Add_Avatar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             TaiHinhDaiDien();
+        }
+
+        private void HienThiGiaiDoan()
+        {
+            ObservableCollection<GiaiDoan> objGiaiDoan = GiaiDoan.HienThiTatCa();
+            cmb_GiaiDoan.ItemsSource = objGiaiDoan;
+            cmb_GiaiDoan.SelectedValue = GiaiDoan;
+        }
+        private void cmb_GiaiDoan_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //MessageBox.Show((cmb_GiaiDoan.SelectedItem as GiaiDoan).MaGiaiDoan.ToString());
         }
     }
 }
