@@ -25,17 +25,22 @@ namespace HocVienPxc.Form
            // InitializeComponent();
         }
 
-        private void btn_DangNhap_Click(object sender, RoutedEventArgs e)
+        private void txt_Email_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (TaiKhoan.KiemTraDangNhap(txt_Email.Text, txt_Password.Text).Count == 1 )
+           if(txt_Email.Text=="Địa chỉ Email")
             {
-                MessageBox.Show("Dang nhap thanh cong");
+                txt_Email.Text = "";
+                txt_Email.Opacity = 100;
             }
-            else
-            {
-                MessageBox.Show("Dang Nhap That Bai");
-            }
+        }
 
+        private void txt_Email_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txt_Email.Text == null)
+            {
+                txt_Email.Text = "Địa chỉ email";
+                txt_Email.Opacity = 50;
+            }
         }
     }
 }

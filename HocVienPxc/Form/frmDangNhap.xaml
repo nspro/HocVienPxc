@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HocVienPxc.Form"
         mc:Ignorable="d"
-        Height="300" Width="300">
+        Height="264" Width="300">
     <Grid>
         <Label x:Name="title" Content="HOCVIENPXC" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_Email" HorizontalAlignment="Left" Height="25" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" BorderBrush="#FF00E0E7" Text="Địa chỉ Email"/>
-        <TextBox x:Name="txt_Password" HorizontalAlignment="Left" Height="25" Margin="10,137,0,0" TextWrapping="Wrap" Text="Mật khẩu" VerticalAlignment="Top" Width="272" BorderBrush="#FF00DFE7"/>
-        <Button x:Name="btn_DangNhap" Content="Button" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="272" Height="38" Background="#FF00DFE7" BorderBrush="{x:Null}" Click="btn_DangNhap_Click"/>
-        <Image x:Name="image_email" HorizontalAlignment="Left" Height="25" Margin="253,107,0,0" VerticalAlignment="Top" Width="29" Source="/HocVienPxc;component/Asset/Graphic/Icon/img_icon_login_email.png"/>
-        <Image x:Name="img_pass" HorizontalAlignment="Left" Height="25" Margin="253,137,0,0" VerticalAlignment="Top" Width="29" Source="/HocVienPxc;component/Asset/Graphic/Icon/img_icon_login_password.png"/>
+        <Border BorderBrush="{DynamicResource Color_control_border_ACACAC}" Width="230" Height="30" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="21,80,21,0">
+            <StackPanel Orientation="Horizontal" Width="230" Height="30" Background="{DynamicResource Color_textbox_BG4}">
+                <TextBox x:Name="txt_Email" HorizontalAlignment="Center" Height="30" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="{x:Null}" Text="Địa chỉ Email" Background="{x:Null}" Padding="10,5,0,0" GotFocus="txt_Email_GotFocus" LostFocus="txt_Email_LostFocus"/>
+                <Image x:Name="image_email" HorizontalAlignment="Right" Height="30" Margin="0" VerticalAlignment="Center" Width="30" Source="/HocVienPxc;component/Asset/Graphic/Login/img_icon_login_email.png" Opacity="0.6"/>
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="{DynamicResource Color_control_border_ACACAC}" Width="230" Height="30" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="21,120,21,0">
+            <StackPanel Orientation="Horizontal" Width="230" Height="30" Background="{DynamicResource Color_textbox_BG4}">
+                <PasswordBox x:Name="pb_Pass" Width="200" Password="grgrgr" Padding="10,5,0,0" Opacity="0.5" />
+                <!--<TextBox x:Name="txt_Password" HorizontalAlignment="Center" Height="30" Margin="0,0,0,4" TextWrapping="Wrap" Text="Mật khẩu" VerticalAlignment="Top" Width="200" BorderBrush="{x:Null}" Background="{x:Null}" Padding="10,5,0,0"/>-->
+                <Image x:Name="img_Pass" HorizontalAlignment="Left" Height="30" Margin="0" VerticalAlignment="Top" Width="30" Source="/HocVienPxc;component/Asset/Graphic/Login/img_icon_login_pass.png" Opacity="0.6"/>
+            </StackPanel>
+        </Border>
+        <Button x:Name="btn_DangNhap" Content="Đăng nhập" HorizontalAlignment="Center" Margin="0,175,0,0" VerticalAlignment="Top" Width="230" Height="35" Background="{DynamicResource Color_Button_Grey}" Foreground="White" FontWeight="Bold" Padding="1,0,1,1"/>
     </Grid>
 
 </Window>
