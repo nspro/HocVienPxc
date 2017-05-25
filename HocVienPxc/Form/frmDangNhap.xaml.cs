@@ -42,5 +42,18 @@ namespace HocVienPxc.Form
                 txt_Email.Opacity = 50;
             }
         }
+
+        private void pb_Pass_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txt_Password.Visibility = Visibility.Hidden;
+        }
+
+        private void pb_Pass_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txt_Password.Text == null)
+            {
+                txt_Password.Visibility = Visibility.Visible;
+            }
+        }
     }
 }
