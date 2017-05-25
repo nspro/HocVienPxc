@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Form\frmThemLop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form\frmThemUngSinh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +117,9 @@
     <Compile Include="DAL\UngSinhDAL.cs" />
     <Compile Include="Form\frmDangNhap.xaml.cs">
       <DependentUpon>frmDangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemLop.xaml.cs">
+      <DependentUpon>frmThemLop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\frmThemUngSinh.xaml.cs">
       <DependentUpon>frmThemUngSinh.xaml</DependentUpon>
