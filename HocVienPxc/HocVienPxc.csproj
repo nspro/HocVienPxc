@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Form\frmThemLop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form\frmThemUngSinh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +118,9 @@
     <Compile Include="Form\frmDangNhap.xaml.cs">
       <DependentUpon>frmDangNhap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\frmThemLop.xaml.cs">
+      <DependentUpon>frmThemLop.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\frmThemUngSinh.xaml.cs">
       <DependentUpon>frmThemUngSinh.xaml</DependentUpon>
     </Compile>
@@ -148,7 +155,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Form\StaticData.DAT" />
+    <None Include="StaticData.DAT" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -238,6 +245,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Asset\Graphic\MenuIcon\img_icon_menu_semeter_manage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\Login\img_icon_login_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\Login\img_icon_login_pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Graphic\Login\img_icon_login_email.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
