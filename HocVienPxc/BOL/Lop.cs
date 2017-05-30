@@ -65,5 +65,10 @@ namespace HocVienPxc.BOL
             LopDAL db = new LopDAL();
             return db.HienThiLop(MaLop);
         }
+        public static ObservableCollection<Lop> HienThiLopTheoGiaiDoan(int MaGiaiDoan)
+        {
+            LopDAL db = new LopDAL();
+            return db.HienThiLopTheoGiaiDoan(MaGiaiDoan);
+        }
     }
 }

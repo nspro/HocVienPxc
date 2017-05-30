@@ -260,6 +260,11 @@ namespace HocVienPxc.BOL
             UngSinhDAL db = new UngSinhDAL();
             return db.CapNhatAnhDaiDien(obj);
         }
+        public static ObservableCollection<UngSinh> ThemUngSinh(UngSinh obj)
+        {
+            UngSinhDAL db = new UngSinhDAL();
+            return db.ThemUngSinh(obj);
+        }
     }
     
 }

@@ -340,5 +340,32 @@ namespace HocVienPxc.DAL
                 return 0;
             }
         }
+        public ObservableCollection<UngSinh> ThemUngSinh(UngSinh obj)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                string q = "Insert into UngSinh values (N'" + obj.TenThanh + "',N'" + obj.HoVaTenLot + "',N'" + obj.TenUngSinh + "',N'" + obj.MaTinhTrang + "',N'" + obj.MaLop + "',N'" + obj.NgaySinh + "',N'" + obj.NoiSinh + "',N'" + obj.NguyenQuan + "',N'" + obj.HoKhauThuongTru + "',N'" + obj.SoCMND + "',N'" + obj.NgayCapCMND + "',N'" + obj.NoiCapCMND + "',N'" + obj.NgayRuaToi + "',N'" + obj.GiaoXuRuaToi + "',N'" + obj.NgayThemSuc + "',N'" + obj.GiaoXuThemSuc + "',N'" + obj.GiaoXu + "',N'" + obj.GiaoPhan + "',N'" + obj.DienThoaiGiaoXu + "',N'" + obj.DienThoaiCaNhan + "',N'" + obj.CaTinh + "',N'" + obj.LichSuOnGoi + "',N'" + obj.YThucDoiTu + "',N'" + obj.HocTapNangKhieu + "',N'" + obj.NhungDiemCoGangThayDoi + "',N'" + obj.NhanDinhOnGoi + "',N'" + obj.SucKhoe + "',N'" + obj.NhanDinhDiem + "', N'" + obj.AnhDaiDien + "') SELECT SCOPE_IDENTITY()";
+                SqlCommand myCommands = new SqlCommand(q, conn);
+                myCommands.CommandType = CommandType.Text;
+                myCommands.ExecuteNonQuery();
+
+                q = "Select top 1 * from UngSinh order by MaUngSinh DESC";
+                SqlCommand myCommand = new SqlCommand(q, conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<UngSinh> lst = new ObservableCollection<BOL.UngSinh>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        lst.Add(UngSinhIDataReader(Reader));
+                    }
+                    Reader.Close();
+                }
+                conn.Close();
+                return lst;
+            }
+        }
     }
 }
