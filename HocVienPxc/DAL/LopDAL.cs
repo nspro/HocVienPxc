@@ -121,5 +121,26 @@ namespace HocVienPxc.DAL
                 return lst;
             }
         }
+        public ObservableCollection<Lop> HienThiLopTheoGiaiDoan(int MaGiaiDoan)
+        {
+            using (SqlConnection conn = getConnect())
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("Select * from Lop where MaGiaiDoan = '" + MaGiaiDoan + "' ", conn);
+                myCommand.CommandType = CommandType.Text;
+                ObservableCollection<Lop> lst = new ObservableCollection<Lop>();
+                SqlDataReader Reader = myCommand.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        lst.Add(LopIDataReader(Reader));
+                    }
+                    Reader.Close();
+                }
+                conn.Close();
+                return lst;
+            }
+        }
     }
 }
