@@ -67,7 +67,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Form\frmThemGiaiDoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form\frmThemLop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmThemMonHoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Form\frmTongQuan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmTrongSo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,14 +130,23 @@
     <Compile Include="Form\frmDangNhap.xaml.cs">
       <DependentUpon>frmDangNhap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\frmThemGiaiDoan.xaml.cs">
+      <DependentUpon>frmThemGiaiDoan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\frmThemLop.xaml.cs">
       <DependentUpon>frmThemLop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemMonHoc.xaml.cs">
+      <DependentUpon>frmThemMonHoc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\frmThemUngSinh.xaml.cs">
       <DependentUpon>frmThemUngSinh.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\frmTongQuan.xaml.cs">
       <DependentUpon>frmTongQuan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmTrongSo.xaml.cs">
+      <DependentUpon>frmTrongSo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\frmUngSinh.xaml.cs">
       <DependentUpon>frmUngSinh.xaml</DependentUpon>

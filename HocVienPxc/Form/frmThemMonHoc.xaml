@@ -1,0 +1,35 @@
+﻿<Page x:Class="HocVienPxc.Form.frmThemMonHoc"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HocVienPxc.Form"
+      mc:Ignorable="d" 
+      d:DesignHeight="330" d:DesignWidth="400"
+      Title="frmThemMonHoc" Width="400" Height="330">
+
+    <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" Width="400" Height="330">
+        <StackPanel Margin="0,0,0,62">
+            <Border BorderThickness="1" Width="350" Height="40" Margin="0,20,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
+                <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
+                    <Label Content="Tên môn học" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold" Height="40"/>
+                    <TextBox x:Name="txt_TenMonHoc" FontSize="14" Width="245" BorderBrush="{x:Null}"></TextBox>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="1" Width="350" Height="40" Margin="0,10,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
+                <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
+                    <Label Content="Mã giai đoạn" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
+                    <!--<TextBox x:Name="txt_MaGiaiDoan" FontSize="14" Width="245" BorderBrush="{x:Null}"></TextBox>-->
+                    <ComboBox x:Name="cb_MaGiaiDoan" Width="245" BorderBrush="{x:Null}" Background="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" />
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="1" Width="350" Height="150" Margin="0,10,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
+                <StackPanel Orientation="Horizontal" Width="350" Height="150" VerticalAlignment="Top" Margin="0">
+                    <Label Content="Chú thích" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
+                    <TextBox x:Name="txt_ChuThich" FontSize="14" Width="245" BorderBrush="{x:Null}"></TextBox>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Button x:Name="btn_Them" Content="Thêm" Height="30" Width="60" Margin="0,0,25,10" HorizontalAlignment="Right" FontWeight="Bold" Background="{DynamicResource Color_Button_Grey}" Foreground="White" VerticalAlignment="Bottom"/>
+    </Grid>
+</Page>
