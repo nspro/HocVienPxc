@@ -1,0 +1,34 @@
+﻿<Page x:Class="HocVienPxc.Form.frmDanhSachUngSinh"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HocVienPxc.Form"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1024"
+      Title="frmDanhSachUngSinh" Width="1024" Height="550">
+
+    <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
+        <StackPanel Height="50" VerticalAlignment="Top" Background="{DynamicResource Color_GridConten_BG}">
+            <Grid Height="50">
+                <Label x:Name="lb_DanhSach" Content="DANH SÁCH ỨNG SINH" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" FontSize="25" FontWeight="Medium" Foreground="{DynamicResource Color_Text_GridHeader}"/>
+            </Grid>
+        </StackPanel>
+        <StackPanel Margin="0,50,0,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Margin="10,10,10,0" Height="25" Width="300" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                <ComboBox x:Name="cb_LocTheoLop" VerticalAlignment="Bottom" Height="25" Width="200" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">
+                    <ComboBoxItem IsSelected="True">An-tôn (2016)</ComboBoxItem>
+                    <ComboBoxItem>Gioan Capistrano (2015)</ComboBoxItem>
+                </ComboBox>
+                <ComboBox x:Name="cb_LocTheoGiaiDoan" VerticalAlignment="Bottom" Height="25" Width="200" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                    <ComboBoxItem IsSelected="True">Tìm Hiểu</ComboBoxItem>
+                    <ComboBoxItem>Thỉnh Sinh</ComboBoxItem>
+                    <ComboBoxItem>Tập Sinh</ComboBoxItem>
+                    <ComboBoxItem>Học Viện</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <ListView Height="430" Margin="10"></ListView>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -63,7 +63,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Form\BangDiemChiTiet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmBangDiemTongQuan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form\frmDangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmDanhSachUngSinh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,8 +139,17 @@
     <Compile Include="DAL\TinhTrangDAL.cs" />
     <Compile Include="DAL\TrongSoDAL.cs" />
     <Compile Include="DAL\UngSinhDAL.cs" />
+    <Compile Include="Form\BangDiemChiTiet.xaml.cs">
+      <DependentUpon>BangDiemChiTiet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmBangDiemTongQuan.xaml.cs">
+      <DependentUpon>frmBangDiemTongQuan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\frmDangNhap.xaml.cs">
       <DependentUpon>frmDangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDanhSachUngSinh.xaml.cs">
+      <DependentUpon>frmDanhSachUngSinh.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\frmThemGiaiDoan.xaml.cs">
       <DependentUpon>frmThemGiaiDoan.xaml</DependentUpon>

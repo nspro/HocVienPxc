@@ -18,7 +18,7 @@
             </Border>
             <Border BorderThickness="1" Width="350" Height="40" Margin="0,10,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
                 <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
-                    <Label Content="Mã giai đoạn" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
+                    <Label Content="Giai đoạn" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
                     <!--<TextBox x:Name="txt_MaGiaiDoan" FontSize="14" Width="245" BorderBrush="{x:Null}"></TextBox>-->
                     <ComboBox x:Name="cb_MaGiaiDoan" Width="245" BorderBrush="{x:Null}" Background="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" />
                 </StackPanel>

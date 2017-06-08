@@ -23,7 +23,7 @@
         <!--<CommandBinding Command="ApplicationCommands.Save" Executed="btn_HanhTrinhOnGoi_Luu_Executed" />-->
     </Window.CommandBindings>
 
-    <Grid Background="#F9F9F9F9" Margin="0">
+    <Grid Background="{DynamicResource Color_GridConten_BG}" Margin="0">
         <StackPanel HorizontalAlignment="Left" Width="200" Margin="5,10,0,10" Background="{DynamicResource Color_Form_BackgroundF9F9F9F}" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow2}">
             <Image x:Name="imgAvatar" Height="120" Margin="55,20,55,0" VerticalAlignment="Bottom" Source="/HocVienPxc;component/Asset/Graphic/Icon/img_avatar.jpg" Cursor="" BitmapEffect="{DynamicResource Style_Object_Drop_Shadow1}" HorizontalAlignment="Center"/>
             <TextBox x:Name="txt_Stick_TenThanh" Height="20" TextWrapping="Wrap" Text="Giu-se" Margin="10,5,10,0" TextAlignment="Center" FontSize="14" FontFamily="Helvetica Neue" Padding="0,1,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF191919" Template="{DynamicResource Template_PersonInformation_textbox}" FontWeight="Bold" IsHitTestVisible="False"/>
