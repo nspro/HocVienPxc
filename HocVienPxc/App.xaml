@@ -70,5 +70,7 @@
         <SolidColorBrush x:Key="Color_Button_Grey" Color="#FF333333"/>
         <SolidColorBrush x:Key="Color_textbox_BG4" Color="#FFF7F7F7"/>
         <SolidColorBrush x:Key="color_texbox_border" Color="#FFDADADA"/>
+        <SolidColorBrush x:Key="Color_GridConten_BG" Color="#FFE5E5E5"/>
+        <SolidColorBrush x:Key="Color_Text_GridHeader" Color="#FF1B1B1B"/>
     </Application.Resources>
 </Application>

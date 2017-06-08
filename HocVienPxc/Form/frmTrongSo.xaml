@@ -1,0 +1,58 @@
+﻿<Page x:Class="HocVienPxc.Form.frmTrongSo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HocVienPxc.Form"
+      mc:Ignorable="d" 
+      d:DesignHeight="330" d:DesignWidth="400"
+      Title="frmTrongSo" Width="400" Height="400">
+
+    <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
+        <StackPanel>
+            <Border BorderThickness="1" Width="350" Height="40" Margin="0,20,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
+                <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
+                    <Label Content="Môn học" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold" Height="40"/>
+                    <ComboBox x:Name="cb_MonHoc" Width="245" BorderBrush="{x:Null}" Background="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" />
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="1" Width="350" Height="40" Margin="0,10,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
+                <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
+                    <Label Content="Số đầu điểm" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
+                    <ComboBox x:Name="cb_SoDauDiem" Width="245" BorderBrush="{x:Null}" Background="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold">
+                        <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+            <Rectangle Width="345" Height="1" Stroke="{DynamicResource Color_Button_Grey}" Margin="0,10,0,0" Fill="{DynamicResource Color_Button_Grey}" Opacity="0.5" />
+            <StackPanel Width="345" Orientation="Horizontal">
+                <Label Content="Tên trọng số" FontSize="14" Padding="0" FontWeight="Bold" Height="30" VerticalContentAlignment="Center" Margin="0" HorizontalContentAlignment="Center" Width="280"/>
+                <Label Content="Hệ số (%)" FontSize="14" Padding="0" FontWeight="Bold" Height="30" VerticalContentAlignment="Center" Margin="0" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="350" Height="30" VerticalAlignment="Top" Margin="0">
+                <TextBox x:Name="txt_TenDiem1" Width="270"/>
+                <TextBox x:Name="txt_TrongSo1" Width="70" Margin="10,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="350" Height="30" VerticalAlignment="Top" Margin="0,5,0,0">
+                <TextBox x:Name="txt_TenDiem2" Width="270" IsEnabled="False"></TextBox>
+                <TextBox x:Name="txt_TrongSo2" Width="70" Margin="10,0,0,0" IsEnabled="False"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="350" Height="30" VerticalAlignment="Top" Margin="0,5,0,0">
+                <TextBox x:Name="txt_TenDiem3" Width="270" IsEnabled="False"></TextBox>
+                <TextBox x:Name="txt_TrongSo3" Width="70" Margin="10,0,0,0" IsEnabled="False"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="350" Height="30" VerticalAlignment="Top" Margin="0,5,0,0">
+                <TextBox x:Name="txt_TenDiem4" Width="270" IsEnabled="False"></TextBox>
+                <TextBox x:Name="txt_TrongSo4" Width="70" Margin="10,0,0,0" IsEnabled="False"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="350" Height="30" VerticalAlignment="Top" Margin="0,5,0,0">
+                <TextBox x:Name="txt_TenDiem5" Width="270" IsEnabled="False"></TextBox>
+                <TextBox x:Name="txt_TrongSo5" Width="70" Margin="10,0,0,0" IsEnabled="False"></TextBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
