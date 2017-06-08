@@ -29,7 +29,7 @@ namespace HocVienPxc.DAL
                 try
                 {
                     conn.Open();
-                    SqlCommand myCommand = new SqlCommand("Insert into Lop values('" + obj.MaLop + "','" + obj.TenLop + "','" + obj.NamBatDau + "','" + obj.MaGiaiDoan + "','" + obj.MaHocKy + "')", conn);
+                    SqlCommand myCommand = new SqlCommand("Insert into Lop values('" + obj.TenLop + "','" + obj.NamBatDau + "','" + obj.MaGiaiDoan + "','" + obj.MaHocKy + "')", conn);
                     myCommand.CommandType = CommandType.Text;
                     myCommand.ExecuteNonQuery();
                     conn.Close();

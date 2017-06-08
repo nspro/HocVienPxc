@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="Thêm lớp" Height="330" Width="400" Background="White" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True">
     <Grid Background="{DynamicResource Color_Form_BackgroundF9F9F9F}">
-        <StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="275*"/>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="3">
             <Border BorderThickness="1" Width="350" Height="40" Margin="0,20,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
                 <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
                     <Label Content="Tên lớp" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold" Height="40"/>
@@ -18,23 +24,30 @@
                 <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
                     <Label Content="Năm bắt đầu" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
                     <!--<TextBox x:Name="txt_NamBatDau" FontSize="14" Width="245" BorderBrush="{x:Null}"></TextBox>-->
-                    <DatePicker x:Name="dt_NamBatDau" Width="245" BorderBrush="{x:Null}" FirstDayOfWeek="Monday" IsTodayHighlighted="True" SelectedDateFormat="Short" Text="grgr" Padding="5,8,5,2" FontSize="14" Foreground="#FF333333" UseLayoutRounding="False" Background="{x:Null}" Height="40" Cursor="grgr" IsHitTestVisible="True" AllowDrop="True"/>
+                    <DatePicker x:Name="dt_NamBatDau" Width="245" BorderBrush="{x:Null}" FirstDayOfWeek="Monday" IsTodayHighlighted="True" SelectedDateFormat="Short" Text="grgr" Padding="5,8,5,2" FontSize="14" Foreground="#FF333333" UseLayoutRounding="False" Background="{x:Null}" Height="40" IsHitTestVisible="True" AllowDrop="True"/>
                 </StackPanel>
             </Border>
             <Border BorderThickness="1" Width="350" Height="40" Margin="0,10,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
                 <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
-                    <Label Content="Mã giai đoạn" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
-                    <ComboBox x:Name="cb_MaGiaiDoan" Width="245" BorderBrush="{x:Null}" Background="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" />
+                    <Label Content="Giai đoạn" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
+                    <ComboBox x:Name="cb_MaGiaiDoan" Width="245"
+                              ItemsSource="{Binding}"
+                              DisplayMemberPath="TenGiaiDoan"
+                              SelectedValuePath="MaGiaiDoan" IsEditable="True"/>
                 </StackPanel>
             </Border>
             <Border BorderThickness="1" Width="350" Height="40" Margin="0,10,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource color_texbox_border}">
                 <StackPanel Orientation="Horizontal" Width="350" Height="40" VerticalAlignment="Top" Margin="0">
-                    <Label Content="Mã học kỳ" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
-                    <TextBox x:Name="txt_MaHocKy" FontSize="14" Width="245" BorderBrush="{x:Null}"></TextBox>
+                    <Label Content="Học kỳ" Background="{DynamicResource Color_Label_Background_#FFF3F4F5}" FontSize="14" Padding="10,10,5,5" Width="105" FontWeight="Bold"/>
+                    <ComboBox x:Name="cb_MaHocKy" Width="244"
+                              ItemsSource="{Binding}"
+                              DisplayMemberPath="TenHocKy"
+                              SelectedValuePath="MaHocKy" IsEditable="True"/>
                 </StackPanel>
             </Border>
-        </StackPanel>
-        <Button x:Name="btn_Them" Content="Thêm" Height="30" Width="63" VerticalAlignment="Bottom" Margin="0,0,25,10" HorizontalAlignment="Right" FontWeight="Bold" Background="{DynamicResource Color_Button_Grey}" Foreground="White"></Button>
+            <Button x:Name="btn_Them" Content="Thêm" Height="30" Width="63" VerticalAlignment="Top" Margin="0,40,25,0" HorizontalAlignment="Right" FontWeight="Bold" Background="{DynamicResource Color_Button_Grey}" Foreground="White" Click="btn_Them_Click">
 
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
